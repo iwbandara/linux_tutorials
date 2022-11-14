@@ -1,0 +1,29 @@
+# deleting a exact line from history
+$ history -d xxx # will remove the line xxx from history
+
+# changing "HISCONTROL=ignorespace" to will not store any command, 
+# if an space is typed before the command
+
+# Linux runlevels
+0 => halt
+1 => single-user
+2-5 => multi-user
+6 => reboot
+
+# checks the current runlevel
+$ runlevel # N 4 explains the current runlevel is 4 and previous is not known
+
+# How to change the runlevel
+$ telinit 3 # 'init 3' changes the current runlevel to 3
+
+# need to edit /etc/inittab file to change the runlevel. 
+# this is not used when using 'systemd'. It uses 'targets'.
+
+multi-user.target => runlevel 3
+graphical.target  => runlevel 5
+
+# to view current runlevel
+$ systemctl get-default
+
+# to change the runlevel
+$ systemctl set-default TARGET.target # systemctl set-default multi-user.target will change the runlevel to 3
