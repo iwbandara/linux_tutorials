@@ -1,0 +1,42 @@
+# Find command in Linux CLI
+# --------------------------------------------
+# Use of 'find' command to find a file by its name
+# Command => find <location> -name <filename>
+find . -name file1.txt # search for the file1.txt in current directory 
+
+# Will look for a file with the specified name & the size or more
+# Sizes => k - Kilohytes, M - Megabytes, G - Gigabytes
+find . -name file1.txt -size 10k # look for the file file1.txt which has size 10 Kilobytes
+
+# Find all PHP files in the current directory
+find . -type f -name "*.php"
+
+# Find directories whose name is specified
+find . -type d -name HELLO
+
+# Find files ignoring Case
+find /home -iname hello # look for files such as Hello, HELLO or hello
+
+# Find files with a specific permission
+find . -type file1 -perm 777 # find a file named file1 with 777 permission
+
+# Find files without the specified permission
+find . -type file1 ! -perm 777 # find files named file1 without 777 permission
+
+# Finds the executable files
+find -perm /a=x
+
+# Find all '.mp3' files with 777 permission and remove them
+find . -type f -name "*.mp3" -exec rm -f {} \;
+
+# Find a file with specific permission and change permissions
+find . -type f -perm 777 -print -exec chmod 755 {} \;
+
+# Find all empty files
+find . -type f -empty
+
+# Find all empty directories
+find . -type d -empty
+
+# Find all hidden files
+find . -type f -name ".*"
