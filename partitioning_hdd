@@ -1,0 +1,26 @@
+# Partitioning of Hard Disk for Linux installation
+
+The following is a definition list of Linux partitions:
+
+/ (root)
+The root partition is the file system where every thing is mounted. 100Mb will suffice, if you define /boot, /usr, and /var. Otherwise use the Use remaining space option.
+
+<swap>
+Swap partition should be, at a minimum, the same size as system memory. The safest size is twice the amount of physical RAM.
+
+/boot
+The /boot partition can be any size, but is recommended to be anywhere between 17MB and 25MB and no larger than 50MB because it only contains the Linux kernel(s) and their boot time files.
+
+/var
+The /var partition is where variable files, logs, web pages, and ftp files are stored. 150MB should be the minimum. It is safest to define this partition so over-running logs do not fill the file system. Use remaining space is a good choice if you think you might need the space for ftp or Web files.
+
+/tmp
+The /tmp partition is where temporary files reside. It easy to dump/wipe and recreate this partition so large sizes are unnecessary; 100Mb recommended.
+
+/home
+The /home partition is where all your individual user directories are located. Limiting this space makes user quotas easier to manage. Create no less than 50MB for your own use at the very least. If your users will need more space use the Use remaining space option.
+
+/usr
+The /usr partition is where most binaries (programs) are stored. This will generally be the largest partition on a "client" Linux system. If you plan on doing an Everything install you want 1500MB or more. This one is a good candidate for the Use remaining space option.
+
+These sizes are just recommendations. You will need to determine what the primary function of the server will be filling and adjust the sizes accordingly. Keep in mind that if any one partition becomes corrupted or unusable, most likely, the entire system will not be affected. This is especially true for /var and /tmp where log files and temp files can get away from you. Also, partitioning will allow for easier rebuilding in this type of situation
