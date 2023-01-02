@@ -1,0 +1,83 @@
+# Use of awk command in Linux for text manipulation
+
+# How to print a specified column as an output
+
+    $ ps | awk '{ print $1 }' # this prints the first column from the 'ps' command output. Here space is considered as the delimiter.
+
+# How to specify a delimiter
+
+    $ awk -F ":" '{print $1}' # prints the first column taking ':' as the delimiter
+
+    $ awk -F ":" '{print $1 $2 $4}' # prints the column 1, 2 & 4 with no spaces
+
+# How to print the last column
+
+    $ awk -F ":" '{print $NF}'
+
+# How to remove the duplicate from the list
+
+    $ awk -F ":" '{print $NF}' | uniq
+
+# Use of Regular Expressions with AWK command
+
+# Example 1:
+
+    $ awk '/regex-pattern/ { action }' <file-name>
+
+    $ awk '/0.5/ { print $1 }' file.txt # prints the first field of each record that contain "0.5" value
+
+# Example 2:
+
+    $ awk '/^[0-9][0-9]/ { print $1 }' file.txt
+
+# How to use Relational expression patterns
+
+# To print the first field of each record whose second field contains “ia”
+    
+    $ awk '$2 ~ /ia/ { print $1 }' file.txt
+
+# To print the match fields do not contain the given pattern
+
+    $ awk '$2 !~ /ia/ { print $1 }' file.txt
+
+# The following command prints the first field of all records whose third field is greater than 50:
+
+    $ awk '$3 > 50 { print $1 }' teams.txt
+
+# To print a custom text, you must quote the text with double-quote characters:
+
+    $ awk '{ print "The first field:", $1}' teams.txt
+
+# You can also print special characters such as newline:
+
+    $ awk 'BEGIN { print "First line\nSecond line\nThird line" }'
+
+# The following command calculates the sum of the values stored in the third field in each line:
+
+    $ awk '{ sum += $3 } END { printf "%d\n", sum }' teams.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
