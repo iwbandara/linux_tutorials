@@ -10,3 +10,11 @@ touch
   Create an empty file or update an existing file’s modification date.
 hostname
   Show or change a system’s hostname.
+env
+  Display the current environment.
+echo
+  Output text.
+export
+  Make local variables available to subprocesses.
+unset
+  Remove a variable.
