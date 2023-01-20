@@ -1,0 +1,21 @@
+# Linux Variables
+
+    Linux works with two variable types. They are LOCAL & ENVIRONMENT.
+
+# Local Variables:
+    
+    name=Indika # this will create a variable named 'name' with a value of 'Indika'. Do not use spaces before & after the equal sign.
+
+# Environemntal variables:
+
+    They are all CAPITAL letters. Ex: PATH, USER, etc.
+
+    echo $USER # prints out the username of the current user of the system.
+
+# In order to remove a variable, you will need to use the command unset:
+
+    name="Indika" # this sets the variable
+
+    echo $name
+
+    unset name # this remove the variable
