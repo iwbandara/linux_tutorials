@@ -21,3 +21,11 @@
     unset name # this remove the variable
     
 # unset requires the name of the variable as an argument. Therefore you may not add $ to the name
+
+ Global variables
+
+    The command 'export' is used to make a variable to be available for sub-processess.
+
+    name=Indika
+
+    export name # do not use the $ sign
