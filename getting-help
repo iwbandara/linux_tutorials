@@ -1,0 +1,17 @@
+# Getting Help in Linux
+
+    Three methods can be used, '--help', man & info.
+
+    '--help' parameter will give basically a brief set of instructions. Be aware that the instructions from --help often are rather brief compared to the other sources of documentation
+
+# Man Pages => 
+    
+    Most commands provide a manual page or “man” page. 
+
+    This documentation is usually installed with the software and can be accessed with the man command.
+
+    $ man mkdir # this command will display the man page for the command 'mkdir'.
+
+    You can use the up and down arrow keys or the space bar to navigate through the man page. To exit the man page, press Q.
+
+    Internally, man uses the 'less' command to display the man page’s content. 'less' lets you search for text within a man page.
