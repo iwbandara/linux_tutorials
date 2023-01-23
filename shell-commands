@@ -1,0 +1,3 @@
+# Creating multiple directories with a same sub-directory
+
+  $ mkdir -p {1,2,3}/tasks # this will create three directories named 1,2 & 3. All of them will have a sub-directory named tasks
