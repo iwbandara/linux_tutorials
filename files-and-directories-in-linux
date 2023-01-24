@@ -7,3 +7,7 @@
     File and directory names in Linux can contain lower case and upper case letters, numbers, spaces and special characters.  
 
     Filenames can contain a suffix which comes after the period (.). Unlike Windows, this suffix has no special meaning in Linux; it is there for human understanding.
+
+# Getting the current location at the prompt;
+
+    The command 'pwd' will print working directory
