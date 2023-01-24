@@ -1,0 +1,9 @@
+# Files & Directories
+
+    Files contain data such as human-readable text, executable programs, or binary data that is used by the computer. 
+
+    Directories are used to create organization within the filesystem. Directories can contain files and other directories.  
+
+    File and directory names in Linux can contain lower case and upper case letters, numbers, spaces and special characters.  
+
+    Filenames can contain a suffix which comes after the period (.). Unlike Windows, this suffix has no special meaning in Linux; it is there for human understanding.
