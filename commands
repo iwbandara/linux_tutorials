@@ -18,3 +18,13 @@ export
   Make local variables available to subprocesses.
 unset
   Remove a variable.
+cd
+  Change the current directory.
+pwd
+  Print the current working directory’s path
+ls
+  List the contents of a directory and display properties of files
+mkdir
+  Create a new directory
+tree
+  Display a hierarchical listing of a directory tree
