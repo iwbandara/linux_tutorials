@@ -11,3 +11,5 @@
 # Getting the current location at the prompt;
 
     The command 'pwd' will print working directory
+
+# The tilde (~) is a special character that represents the user’s home directory.
