@@ -1,0 +1,23 @@
+#   The ls command is one of the many Linux commands that allow a user to list files or directories from the CLI. 
+ 
+#   Listing command 'ls' - use do list the content
+
+# Options that can be used with 'ls' command
+    
+    -a (all) - prints all files/directories, including hidden
+    
+    -d (directories) - list directories, not their contents
+
+    -h (human readable) - prints file sizes in human readable format
+
+    -l (long list) - provides extra details, one file/directory per line
+
+    -r (reverse) - reverses the order of a sort
+
+    -R (recursive) - lists every file, including files in each subdirectory
+
+    -S (size) - sorts by file size
+
+    -t (time) - sorts by modification time
+
+    -X (eXtension) - sorts by file extension
