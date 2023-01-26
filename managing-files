@@ -1,0 +1,17 @@
+# Managing files and directories on Linux using command line tools
+
+# A file is a collection of data with a name and set of attributes.
+
+# A directory is a special kind of file used to organize files.
+
+# The 'mkdir' command is used to create directories.
+
+# The shell interprets the '~' character as your home directory.
+
+# mkdir, by default, won’t create a directory inside of a directory that does not exist. The -p or --parents option instructs mkdir to create parent directories if they do not exist.
+
+# The find program is usually used to search for files and directories, but without any options, it will show you a listing of all the files, directories, and sub-directories of your current directory.
+
+# Files are moved and renamed with the 'mv' command.
+
+# The cp command is used to copy files and directories.
