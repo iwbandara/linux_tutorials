@@ -28,3 +28,25 @@ mkdir
   Create a new directory
 tree
   Display a hierarchical listing of a directory tree
+cat
+  Read and output the contents of a file.
+cp
+  Copy files or directories.
+echo
+  Output a string.
+find
+  Traverse a file system tree and search for files matching a specific set of criteria.
+ls
+  Show properties of files and directories and list a directory’s contents.
+mkdir
+  Create new directories.
+mv
+  Move or rename files or directories.
+pwd
+  Output the current working directory.
+rm
+  Delete files or directories.
+rmdir
+  Delete directories.
+touch
+  Create new empty files or update an existing file’s modification timestamp.
