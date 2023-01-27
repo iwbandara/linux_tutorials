@@ -1,0 +1,26 @@
+# File Compression in Linux
+
+# Compression is used to reduce the amount of space a specific set of data consumes. Compression is commonly used for reducing the amount of space that is needed to store a file. Another common use is to reduce the amount of data sent over a network connection.
+
+# Compression comes in two varieties, lossless and lossy. Things compressed with a lossless algorithm can be decompressed back into their original form. Data compressed with a lossy algorithm cannot be recovered. Lossy algorithms are often used for images, video, and audio where the quality loss is imperceptible to humans, irrelevant to the context, or the loss is worth the saved space or network throughput.
+
+# Archiving tools are used to bundle up files and directories into a single file. Some common uses are backups, bundling software source code, and data retention.
+Archive and compression are commonly used together. Some archiving tools even compress their contents by default.
+
+# The most common tool for archiving files on Linux systems is tar.
+
+# There are lots of compression tools available on Linux. Some common lossless ones are bzip2, gzip, and xz. You will find all three on most systems.
+
+    $ bzip2 bigfile2 # compress the file and store it as bigfile2.bz2
+    
+    $ gzip bigfile3 # compress the file and store it as bigfile3.gz
+
+    $ xz bigfile4 # compress the file and store it as bigfile4.xz
+
+# Use bunzip2, gunzip, or unxz to decompress the files.
+
+    $ bunzip2 bigfile2.bz2 # uncompress the file. 
+    
+    $ gunzip bigfile3.gz # uncompress the file.
+
+    $ unxz bigfile4.xz # uncompress the file.
