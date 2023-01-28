@@ -26,3 +26,9 @@ also another channel that is meant to redirect error output (stderr or channel 2
     $ find /usr games 2> text-error # if any error messages will be store in the file 'text-error'.
 
     As well as the standard output, the standard error can also be appended to a file with the '2>>' operator.
+ 
+    $ find /usr games 2>> text-error # if any error, it will be append to the text-error file.
+
+# There is one particular file that technically is a bit bucket (a file that accepts input and doesn’t do anything with it): /dev/null.
+
+    $ find /usr games 2> /dev/null
