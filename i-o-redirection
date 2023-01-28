@@ -32,3 +32,13 @@ also another channel that is meant to redirect error output (stderr or channel 2
 # There is one particular file that technically is a bit bucket (a file that accepts input and doesn’t do anything with it): /dev/null.
 
     $ find /usr games 2> /dev/null
+    
+# Standard Input
+    
+    This type of redirection is used to input data to a command, from a specified file instead of a keyboard. In this case the '<' operator is used.
+
+    $ cat < text-error # display the file content on the screen.
+
+    Redirecting standard input is usually used with commands that don’t accept file arguments. The 'tr' command is one of them.
+
+    $ tr -d "l" < text-error # the output will be shown after deleting the occurances of letter 'l' from the file content.
