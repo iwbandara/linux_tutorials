@@ -1,0 +1,28 @@
+# I/O Redirection
+
+# I/O redirection enables the user to redirect information from or to a command by using a text file.
+
+# The standard input (stdin or channel 0) of the command is considered to be the keyboard and the standard output (stdout or channel 1) is considered the screen. There is
+also another channel that is meant to redirect error output (stderr or channel 2) of a command or a program’s error messages. The input and/or output can be redirected.
+
+# Standard Output
+
+    To redirect standard output to a file, instead of the screen, we need to use the '>' operator followed by the name of the file. 
+    
+    If the file doesn’t exist, a new one will be created, otherwise, the information will overwrite the existing file.
+
+    $ echo "Hello World!" > text # add the "Hello World" text into the file 'text'. There will be no output on the screen.
+
+    $ echo "Hello!" > text # this command will overwrite content on the file 'text' with "Hello!"
+
+# If you want to append the content at the end of the file, use '>>' operator.
+
+    $ echo "This is the next line." >> text # this add the text into the file.
+
+# Standard Error
+
+    In order to redirect just the error messages, a user will need to employ the '2>' operator followed by the name of the file in which the errors will be written.
+
+    $ find /usr games 2> text-error # if any error messages will be store in the file 'text-error'.
+
+    As well as the standard output, the standard error can also be appended to a file with the '2>>' operator.
