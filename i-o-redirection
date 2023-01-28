@@ -52,3 +52,13 @@ also another channel that is meant to redirect error output (stderr or channel 2
     > hello
     hey
     ola
+
+# Combinations
+    
+    The first combination that we will explore combines the redirection of the standard output and standard error output to the same file. 
+    
+    The '&>' and '&>>' operators are used, '&' representing the combination of channel 1 and channel 2.
+
+    $ find /usr admin &> error.log # add the output including any error to a file created as error.log.
+
+    $ find /usr admin &>> error.log # append the output to the error.log file.
