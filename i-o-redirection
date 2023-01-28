@@ -42,3 +42,13 @@ also another channel that is meant to redirect error output (stderr or channel 2
     Redirecting standard input is usually used with commands that don’t accept file arguments. The 'tr' command is one of them.
 
     $ tr -d "l" < text-error # the output will be shown after deleting the occurances of letter 'l' from the file content.
+# Here Documents
+
+    Unlike the output redirections, the << operator acts in a different way compared to the other operators. This input stream is also called here document.
+
+    $ cat << hello
+    > hey
+    > ola
+    > hello
+    hey
+    ola
