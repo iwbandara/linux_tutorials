@@ -50,3 +50,7 @@ rmdir
   Delete directories.
 touch
   Create new empty files or update an existing file’s modification timestamp.
+head 
+  By default displays the first 10 lines of a file.
+tail
+  By default displays the last 10 lines of a file.
