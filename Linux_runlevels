@@ -11,7 +11,10 @@ $ history -d xxx # will remove the line xxx from history
 6 => reboot
 
 # checks the current runlevel
+
 $ runlevel # N 4 explains the current runlevel is 4 and previous is not known
+
+$ runlevel # 1 5 explains the current runlevel is 5 and previous runlevel is 1
 
 # How to change the runlevel
 $ telinit 3 # 'init 3' changes the current runlevel to 3
