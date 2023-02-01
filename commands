@@ -30,6 +30,7 @@ tree
   Display a hierarchical listing of a directory tree
 cat
   Read and output the contents of a file.
+  -n flag will display line numbers.
 cp
   Copy files or directories.
 echo
