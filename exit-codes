@@ -1,0 +1,5 @@
+# An exit code, or sometimes known as a return code, is the code returned to a parent process by an executable. 
+
+# On POSIX systems the standard exit code is 0 for success and any number from 1 to 255 for anything else.
+
+# Exit code 127 means the command is not found.
