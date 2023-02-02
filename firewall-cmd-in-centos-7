@@ -54,7 +54,7 @@
 
 # To add a service to the firewall's public zone permanently,
 
-    $ sudo firewall-cmd --permanent --zone=public --add-service=http
+    $ sudo firewall-cmd --permanent --zone=phttps://www.youtube.com/watch?v=TyMallqnWiwublic --add-service=http
 
 # Listing the opened up ports in public zone
 
@@ -68,3 +68,7 @@
 
     $ sudo firewall-cmd --zone=public --remove-port=3200/tcp
 
+# Usefull Video links
+
+    https://www.youtube.com/watch?v=fKFYDVWFndc
+    https://www.youtube.com/watch?v=TyMallqnWiw
