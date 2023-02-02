@@ -1,5 +1,13 @@
 # Installing & configuring firewalld service in CentOS
 
+# How to check the availability of the firewalld in the system
+
+    $ rpm -qa | grep firewalld
+
+# Check the configuration files
+
+    $ rpm -qc firewalld
+
 # Firewalld is installed by default on CentOS 7, but if it is not installed on your system
 
 # How to install firewalld in CentOS 7
@@ -13,12 +21,16 @@
 # Firewalld service is disabled by default. To check the status,
 
     $ sudo firewall-cmd --state
-    
+
     $ systemctl status firewalld
 
 # Reload the firewall rules
 
     $ sudo firewall-cmd --reload
+
+# To get a list of all available zones,
+
+    $ sudo firewall-cmd --get-zones
 
 # To list all available zones and more information
 
@@ -27,6 +39,14 @@
 # Print the zone configuration settings
 
     $ sudo firewall-cmd --zone=public --list-all
+
+# You can easily change the Interface Zone by using the using --zone option in combination with the --change-interface option.
+
+    $ sudo firewall-cmd --zone=work --change-interface=eth1
+
+# To change the default zone, use the --set-default-zone option followed by the name of the zone you want to make default.
+
+    $ sudo firewall-cmd --set-default-zone=work # changes the default zone to work
 
 # To permanently do any changes to the firewall use '--permanent' option
 
