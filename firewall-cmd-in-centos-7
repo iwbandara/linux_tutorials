@@ -1,0 +1,48 @@
+# Installing & configuring firewalld service in CentOS
+
+# Firewalld is installed by default on CentOS 7, but if it is not installed on your system
+
+# How to install firewalld in CentOS 7
+
+    $ sudo yum install firewalld -y
+
+# To check the version
+
+    $ sudo firewall-cmd --version
+
+# Firewalld service is disabled by default. To check the status,
+
+    $ sudo firewall-cmd --state
+
+# Reload the firewall rules
+
+    $ sudo firewall-cmd --reload
+
+# To list all available zones and more information
+
+    $ sudo firewall-cmd --list-all-zones
+
+# Print the zone configuration settings
+
+    $ sudo firewall-cmd --zone=public --list-all
+
+# To permanently do any changes to the firewall use '--permanent' option
+
+    $ sudo firewall-cmd --permanent --zone=public --add-port=3200/tcp
+
+# To add a service to the firewall's public zone permanently,
+
+    $ sudo firewall-cmd --permanent --zone=public --add-service=http
+
+# Listing the opened up ports in public zone
+
+    $ sudo firewall-cmd --zone=public --list-ports
+
+# Open the port in the public zone for the current session use the --add-port= option
+
+    $ sudo firewall-cmd --zone=public --add-port=3200/tcp
+
+# To remove a port from the public zone in firewalld
+
+    $ sudo firewall-cmd --zone=public --remove-port=3200/tcp
+
