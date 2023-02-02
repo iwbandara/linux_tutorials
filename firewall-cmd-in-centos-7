@@ -13,6 +13,8 @@
 # Firewalld service is disabled by default. To check the status,
 
     $ sudo firewall-cmd --state
+    
+    $ systemctl status firewalld
 
 # Reload the firewall rules
 
