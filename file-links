@@ -1,0 +1,10 @@
+# Linking of files
+
+    If you need to maintain two (or more) copies of the same fi le on the system, instead of having separate physical copies, you can use one physical copy and multiple virtual copies, called links. 
+    
+    A link is a placeholder in a directory that points to the real location of the file. 
+    
+    Two types of fi le links are available in Linux:
+
+        ■ A symbolic link
+        ■ A hard link
