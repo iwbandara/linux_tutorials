@@ -8,3 +8,5 @@
 
         ■ A symbolic link
         ■ A hard link
+
+# You can only create a hard link between files on the same physical medium. To create a link between fi les under separate physical mediums, you must use a symbolic link.
