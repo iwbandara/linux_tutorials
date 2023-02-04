@@ -3,7 +3,7 @@ bash
 echo
   Output text on the terminal.
 ls
-  List the contents of a directory.
+  List the contents of a directory. -a, -l, -F, -R, -r are some of the options that can be used with ls command.
 type
   Show how a specific command is executed.
 touch
