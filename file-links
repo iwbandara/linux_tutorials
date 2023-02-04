@@ -10,3 +10,15 @@
         ■ A hard link
 
 # You can only create a hard link between files on the same physical medium. To create a link between fi les under separate physical mediums, you must use a symbolic link.
+
+# Creating a hard link
+
+    $ ln <existing-file-name> <new-file-name>
+    
+    $ ln file1 file2 # a hard link will be created by the name file2 for the file1. The inode of both files are equal.
+
+# Creating a symbolic link
+
+    $ ln -s <existing-file-name> <new-file-name>
+    
+    $ ln -s file1 file3 # a symbolic link will be created for the file1 named as file3. Their inode numbers are different. If original file is removed link will be broken.
