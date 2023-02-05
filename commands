@@ -59,3 +59,5 @@ file
   Display the type of file, directory or etc. A quick way to identify the file type.
 kill
   Use to terminate a process. The kill command allows you to send signals to processes based on their process ID (PID).
+killall
+  The killall command is a powerful way to stop processes by using their names rather than the PID numbers. You can use wildcards as well.
