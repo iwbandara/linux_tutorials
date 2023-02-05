@@ -65,3 +65,5 @@ df
   Display how much disk space is available on an individual device. Use -h to get the output in human readable format (M for megabytes, etc)
 du
   The du command shows the disk usage for a specifi c directory (by default, the current directory)
+sort
+  It sorts data in a file.
