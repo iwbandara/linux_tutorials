@@ -61,3 +61,7 @@ kill
   Use to terminate a process. The kill command allows you to send signals to processes based on their process ID (PID).
 killall
   The killall command is a powerful way to stop processes by using their names rather than the PID numbers. You can use wildcards as well.
+df
+  Display how much disk space is available on an individual device. Use -h to get the output in human readable format (M for megabytes, etc)
+du
+  The du command shows the disk usage for a specifi c directory (by default, the current directory)
