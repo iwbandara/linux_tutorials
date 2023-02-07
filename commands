@@ -67,3 +67,5 @@ du
   The du command shows the disk usage for a specifi c directory (by default, the current directory)
 sort
   It sorts data in a file.
+grep
+  Use to search the content in a file. One of the widely used command.
