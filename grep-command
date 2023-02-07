@@ -1,0 +1,33 @@
+# Use of grep command
+
+# Syntax:
+
+    grep [options] pattern <file>
+
+# Examples:
+
+    $ grep three file1 # search & disply the sentences that include the word 'three'.
+
+# To reverse the search (output lines that don’t match the pattern), use the -v
+parameter.
+
+    grep -v pattern <file>
+
+# To find the line numbers where the matching patterns are found, use the -n
+parameter.
+
+    grep -n pattern <file>
+
+# To see a count of how many lines contain the matching pattern, use the -c
+parameter
+
+    grep -c pattern <file>
+
+# To specify more than one matching pattern, use the -e parameter to specify
+each individual pattern
+
+    grep -e [pattern1] -e [pattern2] <file>
+
+# By default, the grep command uses basic Unix-style regular expressions to match patterns.
+# A Unix-style regular expression uses special characters to defi ne how to look for matching
+patterns.
