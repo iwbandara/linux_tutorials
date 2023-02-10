@@ -1,0 +1,3 @@
+# How to list the existing shells in a Linux system
+
+  $ cat /etc/shells
