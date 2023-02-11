@@ -1,0 +1,85 @@
+# The root user account is the administrator for the Linux system and is always assigned
+UID 0.
+
+# A system account is a special account that services running on the system use to gain access to resources on the system.
+
+# Now, most Linux systems hold user passwords in a separate fi le (called the shadow file,
+located at /etc/shadow)
+
+# The /etc/passwd fi le is a standard text fi le. You can use any text editor to manually perform user management functions (such as adding, modifying, or removing user accounts) directly in the /etc/passwd file.
+
+# In Linux /etc/shadow file has control over the user account passwords. Only root user has access to this file.
+
+# There are nine fi elds in each /etc/shadow fi le record:
+
+	The login name corresponding to the login name in the /etc/passwd fi le
+	
+	The encrypted password
+
+	The number of days since January 1, 1970, that the password was last changed
+
+	The minimum number of days before the password can be changed
+
+	The number of days before the password must be changed
+	
+	The number of days before password expiration that the user is warned to change the password
+
+	The number of days after a password expires before the account will be disabled
+	
+	The date (stored as the number of days since January 1, 1970) since the user account was disabled
+	
+	A field reserved for future use
+
+# The primary tool used to add new users to your Linux system is useradd.
+
+	$ sudo useradd <username>
+	
+	$ sudo useradd -u <UID> -g <GID> -c comment <username>
+	
+# By default, the useradd command doesn’t create a HOME directory, but the –m command line option tells it to create the HOME directory.
+
+# By default, the userdel command removes only the user information from the /etc/passwd file. It doesn’t remove any files the account owns on the system.
+
+	$ sudo userdel <username>
+	
+# If you use the -r parameter, userdel removes the user’s HOME directory, along with the user’s mail directory.
+
+	$ sudo userdel -r <username>
+	
+# The usermod command is the most robust of the user account modifi cation utilities. It provides options for changing most of the fi elds in the /etc/passwd file.	
+
+# Parameters used with 'usermod' command
+
+	-c changes the comment of the user account.
+	
+	-e changes the user account expiration date.
+	
+	-g changes the default login group.
+
+	-l changes the login name of the user account.
+	
+	-L locks the account so the user can’t log in.
+
+	-p changes the password for the account.
+	
+	-U unlocks the account so the user can log in.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
