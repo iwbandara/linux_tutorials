@@ -64,16 +64,51 @@ located at /etc/shadow)
 	
 	-U unlocks the account so the user can log in.
 
+# A quick way to change just the password for a user is the passwd command
 
+	$ sudo passwd <username>
 
+# The -e option is a handy way to force a user to change the password on the next log in.
 
+# If you ever need to do a mass password change for lots of users on the system, the chpasswd command can be a lifesaver.
 
+	$ sudo chpasswd (press Enter key)
+	  user1:password1
+	  user2:password2 (press Ctrl+D)
 
+# You can also use the redirection command to redirect a fi le of userid:password pairs into the command:
 
+	# chpasswd < users.txt
 
+# The chsh command allows you to quickly change the default login shell for a user. You must use the full pathname for the shell, and not just the shell name.
 
+	# chsh -s <shell-path> <username>
+	
+# The chfn command provides a standard method for storing information in the comments field in the /etc/passwd file.
 
+# The chage command helps you manage the password aging process for user accounts.
 
+	$ sudo chage -E $(date -d +180days +%Y-%m-%d) # sets an account to expire in 180 days.
+
+# The chage command is that it allows you to set an expiration date for an account.
+
+# Group permissions allow multiple users to share a common set of permissions for an object
+on the system, such as a fi le, directory, or device.
+
+# Each group has a unique GID, which, like UIDs, is a unique numerical value on the system.
+Along with the GID, each group has a unique group name.
+
+# Adding new group done by groupadd command
+
+	$ sudo groupadd <groupname>
+
+# When you create a new group, no users are assigned to it by default. The groupadd command doesn’t provide an option for adding user accounts to the group.
+
+# The groupmod command allows you to change the GID (using the -g parameter) or the group name (using the -n parameter) of an existing group.
+
+	$ sudo groupmod -n <new-groupname> <old-groupname>
+
+# When changing the name of a group, the GID and group members remain the same, only the group name changes. Because all security permissions are based on the GID.
 
 
 
