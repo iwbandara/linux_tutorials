@@ -1,0 +1,95 @@
+# Linux file permissions
+
+# The first field in the output listing is a code that describes the permissions for the files and
+directories. 
+
+# The first character in the field defines the type of the object:
+
+	- for fi les
+ 
+	d for directories
+	
+	l for links
+
+	c for character devices
+ 
+	b for block devices
+	
+	n for network devices
+
+# Each set of three characters defines an access permission triplet:
+
+	r for read permission for the object
+	
+	w for write permission for the object
+	
+	x for execute permission for the object
+
+# The three sets relate the three levels of security for the object:
+	
+	The owner of the object
+	
+	The group that owns the object
+	
+	Everyone else on the system
+
+# The umask command sets the default permissions for any fi le or directory you create in the system
+
+# The umask command shows and sets the default permissions.
+
+# The full permission for a fi le is mode 666 (read/write permission for all), but for a directory it’s 777 (read/write/execute permission for all).
+
+# The umask value is normally set in the /etc/profile startup fi le in most Linux distribu-
+tions
+
+# The chmod command allows you to change the security settings for fi les and directories.
+
+# The format of the chmod command is:
+
+	chmod options mode file
+	
+	$ sudo chmod 755 file.txt # applies rwx to owner, r-x permissions to the group & others of the file.txt
+
+# The first group of characters defines to whom the new permissions apply:
+
+	u for the user
+
+	g for the group
+
+	o for others (everyone else)
+	
+	a for all of the above
+
+# Note that the –F option for the ls command indicates whether a file has execution permissions by adding an asterisk to the filename.
+
+# The -R parameter performs the fi le and directory changes recursively.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
