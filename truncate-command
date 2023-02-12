@@ -1,0 +1,26 @@
+# To remove the content of a file without deleting the file; for that Linux operating system offers a command called “truncate”.
+
+# Truncating a file is much quicker and simpler without modifying the permissions and ownership of the file.
+
+# The truncated size depends on the original size of the file; the extra data will be lost if the file size is greater than the specified size.
+
+# The “>” shell redirection operator is the most popular and simplest way to truncate files.
+
+  $ >file.txt
+  
+  $ du -h file.txt
+  
+# Another way to truncate file is:
+
+  $ cat /dev/null > test.sh
+
+# Use the “-s” option to remove the content of the files. This is a preferable way to manually delete a file. 
+# The truncate command effectively eliminates all the contents of a file. 
+# It does not delete the file itelf, but leaves it as a zero-byte file on the disk.
+
+  $ truncate -s 0 file.txt
+  
+  $ du -sh file.txt # display the file size after the truncate process.
+  
+  
+  # Weblink => https://linuxhint.com/truncate-command-in-linux/
