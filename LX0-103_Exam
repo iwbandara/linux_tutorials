@@ -1,0 +1,13 @@
+# CompTIA Linux+
+
+# Exam LX0-103
+
+# A shell is a program that accepts and interprets text-mode commands and provides an interface to the system.
+
+# In Linux, bash is the most common default shell for user accounts.
+
+# The time command times how long subsequent commands take to execute.
+
+	For instance, typing time pwd tells you how long the system took to execute the pwd command.
+
+
