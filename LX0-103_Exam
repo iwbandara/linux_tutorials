@@ -10,4 +10,16 @@
 
 	For instance, typing time pwd tells you how long the system took to execute the pwd command.
 
+# The exit and logout commands both terminate the shell. The exit command terminates any shell, but the logout command terminates only login shells.
 
+# You can quickly determine if a command is a builtin command by using the type command.
+
+# When external commands are installed, the internal command takes precedence.
+
+# To delete an environment variable, use the unset command. The command takes the name of an environment variable (without the leading $ symbol) as an option.
+	
+	$ unset PS1
+
+# Typically, the tee command is used in conjunction with data pipes so that a program's output can be both stored and viewed immediately.
+
+	$ ls | tee result.txt # ls commands output will be displayed on the shell & the same will be copied to the result.txt file.
