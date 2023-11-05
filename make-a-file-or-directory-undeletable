@@ -1,0 +1,21 @@
+How to make a file un-deletable in a Linux system:
+--------------------------------------------------
+
+=> Can use the chattr command
+
+  $ chattr +i -V <path-to-the-file>
+
+  Example:
+        $ sudo chattr +i -V Desktop/file.txt
+
+How to make a directory un-deletable in a Linux system:
+--------------------------------------------------
+
+=> Can use the chattr command
+
+  $ chattr +i -VR <path-to-the-file>
+
+  Example:
+        $ sudo chattr +i -RV Desktop/files
+
+=> To make the file deleteable again, use -i, and to make a directory deleteable, use -i and the -R recursive option.
