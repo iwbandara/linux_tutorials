@@ -57,6 +57,10 @@ Terminal Multiplexer (TMUX)
 	
   Press Ctrl + B, then Q followed by the pane index value
 
+=> How to convert a pane into a Window:
+
+	Press Ctrl + B followed by ! 
+
 => How to change the size of a pane:
 	
   Press Ctrl + B then hold down Ctrl and use the arrow keys
