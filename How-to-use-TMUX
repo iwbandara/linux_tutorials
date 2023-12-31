@@ -72,3 +72,7 @@ Terminal Multiplexer (TMUX)
 => How to move between windows:
 	
   Press Ctrl + B then N key
+
+=> How to name a window:
+
+	Ctrl + B then , and type the name
