@@ -1,0 +1,74 @@
+Terminal Multiplexer (TMUX)
+===========================
+
+=> How to install tmux in CentOS:
+
+	# yum install tmux -y
+
+=> Creating a terminal:
+
+  # tmux
+
+=> Detaching a terminal:
+	
+  Press Ctrl + B then D
+
+=> List out the already created sessions:
+	
+  # tmux ls
+
+=> Create a session with a name:
+	
+  # tmux new -s <session-name>
+
+=> To open a previously detached session:
+	
+  # tmux a -t <session-index> or <session-name>
+
+=> To open the most recently detached session:
+	
+  # tmux a
+
+=> How to remove/ kill the most recent session:
+	
+  # tmux kill-session
+
+=> How to remove/ kill a specific session:
+	
+  # tmux kill-session -t scripts // kills the session named as scripts
+
+*** By default when we create a new session a single window (0) is created.
+
+*** You can create multiple panes inside a single window.
+
+=> How to create vertical panes:
+	
+  Press Ctrl + B, then % sign
+
+=> Moving through panes:
+	
+  Ctrl + B, then Up, Down, Left, or Right arrow keys
+
+=> How to check the pane index values:
+	
+  Press Ctrl + B, then Q key
+
+=> To move to a specific pane:
+	
+  Press Ctrl + B, then Q followed by the pane index value
+
+=> How to change the size of a pane:
+	
+  Press Ctrl + B then hold down Ctrl and use the arrow keys
+
+=> How to select pre-designed pane patterns:
+	
+  Ctrl + B, then hold down Alt and press 1 // Vertical columns
+
+=> How to create multiple windows:
+	
+  Press Ctrl + B followed by C key
+
+=> How to move between windows:
+	
+  Press Ctrl + B then N key
