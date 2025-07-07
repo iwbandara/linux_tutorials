@@ -40,3 +40,6 @@ find . -type d -empty
 
 # Find all hidden files
 find . -type f -name ".*"
+
+# find the files with same content;
+find . -type f -exec grep "sample" {} +
