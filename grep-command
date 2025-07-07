@@ -35,3 +35,9 @@
 # By default, the grep command uses basic Unix-style regular expressions to match patterns.
 # A Unix-style regular expression uses special characters to defi ne how to look for matching
 patterns.
+
+# Use of grep command on multiple files;
+
+    # grep "sample" file1 file2
+
+    # grep -l "sample" file1 file2 -> -l option only display the file name, not the matched content
