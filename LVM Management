@@ -1,0 +1,49 @@
+Logical Volume Manager (LVM)
+----------------------------
+
+-> LVM (Logical Volume Manager) is a flexible and powerful disk management system used in Linux to manage storage devices more efficiently than traditional partitioning methods.
+
+-> LVM provides flexibility, scalability, and ease of storage management in Linux, making it ideal for modern server and desktop environments.
+
+-> Main Uses of LVM:
+
+Flexible Disk Management: Allows dynamic resizing of logical volumes (LVs) — grow or shrink without rebooting.
+
+Easier Volume Expansion: You can add more physical disks (PVs) to a volume group (VG) and expand storage on the fly.
+
+Logical Volume Creation: Create logical volumes of any size, independent of the physical disk boundaries.
+ 
+Snapshots: Create point-in-time copies of volumes (snapshots) for backup or testing.
+
+Disk Striping or Mirroring: Improve performance or redundancy by striping (RAID 0) or mirroring (RAID 1).
+
+Simplified Storage Migration: Move data between physical devices without unmounting or downtime.
+
+-> LVM Components:
+
+PV (Physical Volume): Underlying physical storage (e.g., /dev/sda1)
+
+VG (Volume Group): Pool of storage combining one or more PVs
+
+LV (Logical Volume): Usable storage unit carved out from a VG (like a partition)
+
+-> LVM Commands:
+
+  # pvcreate /dev/sdb1  -> this will create a physical volume from /dev/sdb1 partition
+
+  # pvcreate /dev/sdc    -> this will create a physical volume from /dev/sdc entire disk
+
+  # pvs or # pvdisplay  -> can be used to display the physical volume information. 
+
+  # vgcreate DevOps /dev/sdc   -> creates a volume group named DevOps from /dev/sdc physical volume.
+
+**** Impoertant above command will use the default Physical Extent (PE) size.
+
+  # vgcreate -s 8M DevOps /dev/sdc   -> changes the default PE size to 8 MB.
+
+  # vgs or # vgdisplay   -> used to display volume group information
+
+  # lvcreate -L 50G -n Docs DevOps   -> build a logical volume of 50 GB with a name of Docs
+
+  # lvcreate -l 50 -n Docs DevOps   -> build a logical volume of 50 PEs with a name of Docs. If PE size is 8 MB, logical volume size is 400 MB.
+
