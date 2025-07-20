@@ -28,6 +28,14 @@
 
     grep -r pattern <path/to/the/directory>
 
+# To get exact matches from the file
+
+    grep -x pattern <file>
+
+# To search for a complete word of the pattern;
+
+    grep -w pattern <file>
+
 # To specify more than one matching pattern, use the -e parameter to specify each individual pattern
 
     grep -e [pattern1] -e [pattern2] <file>
@@ -41,3 +49,8 @@ patterns.
     # grep "sample" file1 file2
 
     # grep -l "sample" file1 file2 -> -l option only display the file name, not the matched content
+
+# Use of egrep command
+
+    # egrep "man|lan|wan" file1 -> instead of -e option egrep command can be used to extend the grep search
+
