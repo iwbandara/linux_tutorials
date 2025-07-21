@@ -43,3 +43,6 @@ find . -type f -name ".*"
 
 # find the files with same content;
 find . -type f -exec grep "sample" {} +
+
+# Find a file named 'file1' with 755 permission and copy it to the bin directory which is at the current directory
+find . -name file1 -perm 0755 -exec cp -p {} bin/ \;   
