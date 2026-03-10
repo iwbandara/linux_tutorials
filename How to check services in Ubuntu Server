@@ -1,0 +1,12 @@
+
+=> List all currently running services: This command filters the list to show only services in the 'running' sub-state:
+
+  #systemctl list-units --type=service --state=running
+
+=> List all active services: This includes services that are running or have exited but are still considered 'active' by systemd:
+
+  #systemctl list-units --type=service --state=active
+
+=> Check the status of a specific service: Replace service_name (e.g., ssh, apache2) with the actual name of the service you want to check:
+
+  # systemctl status service_name
