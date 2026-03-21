@@ -1,52 +1,52 @@
-bash
-  The most popular shell on Linux computers.
-echo
-  Output text on the terminal.
-ls
-  List the contents of a directory. -a, -l, -F, -R, -r, -i are some of the options that can be used with ls command.
+1. hostname => Show or change a system’s hostname.
+
+2. pwd => Print the current working directory’s path.
+
+3. echo => Output text on the terminal.
+
+4. ls => List the contents of a directory. -a, -l, -F, -R, -r, -i are some of the options that can be used with ls command.
+
+5. cd => Change the current directory.
+
+6. mkdir => Create a new directory.
+
+7. cp => Copy files or directories.
+
+8. mv => Move or rename files or directories.
+
+9. rm => Delete files or directories.
+
+10. touch => Create an empty file or update an existing file’s modification date.
+
+11. cat => Read and output the contents of a file. '-n' flag will display line numbers.
+
+
+*** bash is the most popular shell on Linux computers.
+
+
 type
   Show how a specific command is executed.
-touch
-  Create an empty file or update an existing file’s modification date.
-hostname
-  Show or change a system’s hostname.
+
+
 env
   Display the current environment.
-echo
-  Output text.
 export
   Make local variables available to subprocesses.
 unset
   Remove a variable.
-cd
-  Change the current directory.
-pwd
-  Print the current working directory’s path
-ls
-  List the contents of a directory and display properties of files
-mkdir
-  Create a new directory
+
+
 tree
   Display a hierarchical listing of a directory tree
-cat
-  Read and output the contents of a file.
-  -n flag will display line numbers.
-cp
-  Copy files or directories.
-echo
-  Output a string.
+
+
 find
   Traverse a file system tree and search for files matching a specific set of criteria.
 ls
   Show properties of files and directories and list a directory’s contents.
 mkdir
   Create new directories.
-mv
-  Move or rename files or directories.
-pwd
-  Output the current working directory.
-rm
-  Delete files or directories.
+
 rmdir
   Delete directories.
 touch
