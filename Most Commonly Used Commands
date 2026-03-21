@@ -20,52 +20,36 @@
 
 11. cat => Read and output the contents of a file. '-n' flag will display line numbers.
 
+12. rmdir => Delete directories which are empty.
+
+13. head => By default displays the first 10 lines of a file.
+
+14. tail => By default displays the last 10 lines of a file.
+
+15. tree => Display a hierarchical listing of a directory tree.
+
+16. find => Traverse a file system tree and search for files matching a specific set of criteria.
+
+17. file => Display the type of file, directory or etc. A quick way to identify the file type.
+
+18. grep =>  Use to search the content in a file. One of the widely used command.
+
+19. type => Show how a specific command is executed.
+
+20. env => Display the current environment.
+
+21. export => Make local variables available to subprocesses.
+
+22. unset => Remove a variable.
+
+23. kill => Use to terminate a process. The kill command allows you to send signals to processes based on their process ID (PID).
+
+24. killall => The killall command is a powerful way to stop processes by using their names rather than the PID numbers. You can use wildcards as well.
+
+25. df => Display how much disk space is available on an individual device. Use -h to get the output in human readable format (M for megabytes, etc)
+
+26. du => The du command shows the disk usage for a specifi c directory (by default, the current directory)
+
+27. sort => It sorts data in a file.
 
 *** bash is the most popular shell on Linux computers.
-
-
-type
-  Show how a specific command is executed.
-
-
-env
-  Display the current environment.
-export
-  Make local variables available to subprocesses.
-unset
-  Remove a variable.
-
-
-tree
-  Display a hierarchical listing of a directory tree
-
-
-find
-  Traverse a file system tree and search for files matching a specific set of criteria.
-ls
-  Show properties of files and directories and list a directory’s contents.
-mkdir
-  Create new directories.
-
-rmdir
-  Delete directories.
-touch
-  Create new empty files or update an existing file’s modification timestamp.
-head 
-  By default displays the first 10 lines of a file.
-tail
-  By default displays the last 10 lines of a file.
-file
-  Display the type of file, directory or etc. A quick way to identify the file type.
-kill
-  Use to terminate a process. The kill command allows you to send signals to processes based on their process ID (PID).
-killall
-  The killall command is a powerful way to stop processes by using their names rather than the PID numbers. You can use wildcards as well.
-df
-  Display how much disk space is available on an individual device. Use -h to get the output in human readable format (M for megabytes, etc)
-du
-  The du command shows the disk usage for a specifi c directory (by default, the current directory)
-sort
-  It sorts data in a file.
-grep
-  Use to search the content in a file. One of the widely used command.
