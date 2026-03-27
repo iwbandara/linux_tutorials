@@ -1,0 +1,19 @@
+=> When a command is executed the standard output is displayed on the terminal. If there is an error it is also displayed on the terminal.
+
+=> We can used the redirection to move the output from the terminal to a file.
+
+=> Standard Output:
+
+    $ ls -l > output.txt //This will move the output of 'ls -l' command into a file named output.txt. If the file does not exist it will create a new file 
+and if file is already there it will re-create the file replacing the existing file.
+
+    $ ls -l >> output.txt //The command will append the output if the file exists, if not creates a new file.
+
+    $ ls -l file11.txt >> output.txt //This command will generate an error and it will be displayed on the terminal. If error needs to be copied to a file need the following
+command to be executed.
+
+    $ ls -l file11.txt >> output.txt 2> error.txt
+
+    $ ls -l file11.txt >> output.txt 2>> error.txt
+
+    $ ls -l file11.txt >> output.txt 2> /dev/null //This command will not save the error, it will discard the error message.
