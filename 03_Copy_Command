@@ -1,0 +1,25 @@
+=> At linux terminal we use cp command to copy files and directories.
+
+=> The syntax of this command is:
+
+    $ cp -vinr [...file/directory-sources] [destination]
+
+Examples:
+---------
+
+-> How to copy a single file;
+    $ cp file1.txt dir1/
+
+-> How to copy multiple files:
+    $ cp file1.txt file2.txt dir1/
+
+-> How copy a directory:
+    $ cp -r dir1/ dir2/
+
+**** To copy directories, you have to pass the -r flag. This flag informs the cp command to recursively copy a directory and its contents.
+
+-> How to copy files that match a glob pattern:
+    $ cp dir1/*.txt dir2/
+
+-> Copy files which are updated:
+    $ cp -rvu dir1/ dir2/    //The 'u' option select only the updated files.
