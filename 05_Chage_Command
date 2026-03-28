@@ -1,0 +1,18 @@
+Use of 'chage' Command:
+-----------------------
+
+Options               Description                                                                     Example
+
+-l/ --list            Displays the current password aging settings for the specified user.            chage -l john
+	
+-d/ --lastday         Sets the date of the last password change.                                      sudo chage -d 2025-01-15 john
+                      Setting this to 0 forces a user to change their password at the next login.	                                                                        	
+-E/ --expiredate	    Sets the date when the user account will be permanently disabled.               sudo chage -E 2026-12-31 john
+                      Use -1 to remove the expiration date.		
+-I/ --inactive	      Sets the number of days of inactivity after a password has expired	            sudo chage -I 30 john
+                      before the account is locked.	
+-m/ --mindays	        Sets the minimum number of days that must pass before a user is 	              sudo chage -m 2 john
+                      allowed to change their password again.	
+-M/ --maxdays	        Sets the maximum number of days a password remains valid. 	                    sudo chage -M 90 john
+                      Use -1 for no expiration.	
+-W/ --warndays	      Sets the number of days of warning before a password expires.	                  sudo chage -W 7 john
