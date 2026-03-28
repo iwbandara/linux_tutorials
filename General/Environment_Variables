@@ -1,0 +1,11 @@
+
+-> How to check the current variables:
+    $echo $PATH
+
+-> How to add a new PATH variable:
+    $PATH=$PATH:/opt
+
+*** However, this is not permanetly added variable. It will not be available in another shell instance.
+
+-> How to add a permanent variable:
+    $export PATH=$PATH:/opt
