@@ -1,0 +1,31 @@
+Important: I have used a command soon after the $ symbol to clearly show the command, but when using at the prompt you does not need the space.
+
+-> How to add a new user to the system:
+
+    $ sudo useradd User10
+
+-> How to add a new user with a specific comment:
+
+    $ sudo useradd -c "User 10" User10
+
+-> How to add a new user with a specific Shell:
+
+    $ sudo useradd -s /usr/bin/bash User10
+
+-> How to add a new user without a shell:
+
+    $ sudo useradd -s /usr/bin/nologin User10
+
+-> How to change/ setup the password to a user:
+
+    $ sudo passwd User10  //This command will prompt you to enter the password and confirm it.
+
+-> How to lock a user account:
+
+    Method 1: $ sudo useradd -l User10
+    Method 2: $ sudo usermod -L User10
+
+-> How to unlock a user account:
+
+    Method 1: $ sudo useradd -u User10
+    Method 2: $ sudo usermod -U User10
