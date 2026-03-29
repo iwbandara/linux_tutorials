@@ -1,7 +1,7 @@
 # Use of grep command:
 ---------------------
 
-# Grep is short for Global regular expression print.
+# Grep is short for Global Regular Expression Print.
 # Grep is a Linux command-line tool that allows users to search files for a specified textual pattern. When grep finds a match, it prints lines containing that pattern to the terminal. 
 # Users can utilize grep options to include additional context around the match or show only matching parts of the line.
 # By default, the grep command outputs entire lines that contain the match.
@@ -12,7 +12,7 @@
 
 # Examples:
 
-    $ grep three file1 # search & disply the sentences that include the word 'three'.
+    $ grep "three" file1 # search & disply the sentences that include the word 'three'.
 
 # To reverse the search (output lines that don’t match the pattern), use the -v parameter.
 
