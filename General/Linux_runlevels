@@ -5,12 +5,15 @@ $ history -d xxx # will remove the line xxx from history
 # if an space is typed before the command
 
 # Linux runlevels
-0 => halt
-1 => single-user
-2-5 => multi-user
-6 => reboot
+0 => Halt the system
+1 => Single-user mode
+2 => Multi-user mode without NFS
+3 => Full multi-user mode without GUI
+4 => Unused
+5 => Full Multi-user with GUI
+6 => Reboot
 
-# checks the current runlevel
+# Command to check the current runlevel:
 
 $ runlevel # N 4 explains the current runlevel is 4 and previous is not known
 
