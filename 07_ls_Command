@@ -21,3 +21,6 @@
     -t (time) - sorts by modification time
 
     -X (eXtension) - sorts by file extension
+
+    -F - Used to visually classify entries by appending a specific indicator character to the end of each name. 
+         This helps users quickly identify the type of an entry without needing to look at detailed file permissions.
