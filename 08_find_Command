@@ -1,5 +1,6 @@
-# Find command in Linux CLI
-# --------------------------------------------
+# Find command in Linux CLI:
+# --------------------------
+
 # Use of 'find' command to find a file by its name
 # Command => find <location> -name <filename>
 find . -name file1.txt # search for the file1.txt in current directory 
