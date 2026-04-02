@@ -1,0 +1,15 @@
+The locate Command:
+-------------------
+
+-> The fastest method to search for files in the Linux directory tree is to use the locate command.
+
+    [root@server1 ~]# locate <filename>
+
+-> The locate command looks in a premade database that contains a list of all the files on the system.
+
+-> The database used for the locate command (/var/lib/mlocate/mlocate.db) is updated each day automatically and can be updated manually 
+   by running the updatedb command at a command prompt.
+
+-> You can configure the directories that are searched by the updatedb command by editing the /etc/updatedb.conf file.
+
+*** A slower yet more versatile method for locating files on the filesystem is to use the find command.
