@@ -13,6 +13,11 @@
 
 # Hard links have some limitations. First, you can use hard links only with regular files. You cannot use the ln command to create a hard link to a directory or special file.
 
+# Symbolic links have some advantages over hard links:
+
+        • Symbolic links can link two files on different file systems.
+        • Symbolic links can point to a directory or special file, not just to a regular file.
+
 # Creating a hard link:
 -----------------------
 
