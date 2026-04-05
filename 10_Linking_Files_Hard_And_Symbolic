@@ -11,6 +11,8 @@
 
 # You can only create a hard link between files on the same physical medium. To create a link between files under separate physical mediums, you must use a symbolic link.
 
+# Hard links have some limitations. First, you can use hard links only with regular files. You cannot use the ln command to create a hard link to a directory or special file.
+
 # Creating a hard link:
 -----------------------
 
