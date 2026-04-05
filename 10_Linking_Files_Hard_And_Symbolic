@@ -23,6 +23,8 @@
 # Creating a symbolic link:
 ---------------------------
 
+# Also called as a soft link.
+
     $ ln -s <existing-file-name> <new-file-name>
     
     $ ln -s file1 file3 # a symbolic link will be created for the file1 named as file3. Their inode numbers are different. If original file is removed link will be broken.
