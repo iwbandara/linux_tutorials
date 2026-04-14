@@ -52,3 +52,6 @@ Logical Volume Manager (LVM)
 
   # lvcreate -l 50 -n Docs DevOps   -> build a logical volume of 50 PEs with a name of Docs. If PE size is 8 MB, logical volume size is 400 MB.
 
+**** Once the logical volume is created, you need to format with a file system and mount it to a directory for the users to store data.
+
+   # mkfs.ext4 /dev/DevOps/Docs -L "Documents"    -> This will format the logical volume with 'ext4' file system and a label as "Documents".
