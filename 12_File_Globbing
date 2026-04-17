@@ -1,0 +1,15 @@
+
+
+-> File globbing is a pattern-matching mechanism used by the Linux shell (like Bash or Zsh) to expand wildcard characters into a list of matching filenames or paths.
+
+-> Core Globbing Wildcards:
+---------------------------
+
+  => Asterisk (*): Matches zero or more characters. For instance, report* will match report.txt, reports, and reporting.pdf.
+
+  => Question Mark (?): Matches exactly one character. For example, file?.txt matches file1.txt but not file10.txt, according to Scaler Topics.
+
+  => Square Brackets ([]): Matches any single character from the set defined inside the brackets. [abc] matches a, b, or c. You can also specify ranges like [0-9] for digits or [a-z] 
+  for lowercase letters, as detailed by TutorialsPoint.
+    
+  => Exclamation Mark (!) or Caret (^): Used inside square brackets to negate a match. [!0-9] matches any character that is not a digit. 
