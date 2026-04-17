@@ -1,6 +1,7 @@
 # Linking of files
 
-=> If you need to maintain two (or more) copies of the same file on the system, instead of having separate physical copies, you can use one physical copy and multiple virtual copies, called links. 
+=> If you need to maintain two (or more) copies of the same file on the system, instead of having separate physical copies, you can use one physical copy and multiple virtual copies, 
+called links. 
 
 => A link is a placeholder in a directory that points to the real location of the file. 
     
@@ -11,14 +12,17 @@
 
 # You can only create a hard link between files on the same physical medium. To create a link between files under separate physical mediums, you must use a symbolic link.
 
-# Hard links have some limitations. First, you can use hard links only with regular files. You cannot use the ln command to create a hard link to a directory or special file.
+# Hard links have some limitations. First, you can use hard links only with regular files. You cannot use the ln command to create a hard link to a directory or special file. 
+
+# When a hard link is created both the files will have the same inode value. Deletion of one file will not affect the other file.
 
 # Symbolic links have some advantages over hard links:
 
         • Symbolic links can link two files on different file systems.
         • Symbolic links can point to a directory or special file, not just to a regular file.
 
-# When the original regular file is deleted, the symbolic link still points to the file but the target is gone. A symbolic link that points to a missing file is called a "dangling symbolic link".
+# When the original regular file is deleted, the symbolic link still points to the file but the target is gone. A symbolic link that points to a missing file is called 
+a "dangling symbolic link".
 
 # Creating a hard link:
 -----------------------
