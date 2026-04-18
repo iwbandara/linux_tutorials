@@ -1,0 +1,75 @@
+Archiving and Compression of Files in Linux:
+============================================
+
+-> Archiving means putting a set of file into a single file with an extention of .tar.
+
+How to archive files:
+---------------------
+
+	# tar cvf <archive_name.tar> <file1> <file2> etc.,
+
+How to view the archived files:
+-------------------------------
+
+	# tar tf <archive_name.tar>
+
+How to extract files:
+---------------------
+
+	# tar xvf <archive_name.tar> <destination_path>
+
+How to extract files to a Directory:
+------------------------------------
+
+	# tar xvf <archive_name.tar> -C <destination_path>
+
+How to compress files:
+----------------------
+
+	# tar cvfa compress.tar.gz file1 file2 file3
+
+** When option 'a' is used it automatically compress the files as per the given file extension.
+
+How to compress a file using gzip format:
+-----------------------------------------
+
+	# tar cvfz <filename.gz> <file1> <file2> etc.,
+
+How to compress a file using bzip2 format:
+-----------------------------------------
+
+	# tar cvfj <filename.tar.bz2> <file1> <file2> etc.,
+
+How to decompress a compressed file using gzip or bzip2:
+--------------------------------------------------------
+
+	** Use the '-d' option.
+
+	# gzip -d <compressed_file.gz>
+
+***  As like in 'ps' command 'tar' command does not require a dash before the options.
+
+gzip and bzip2 Compression:
+---------------------------
+
+-> The gzip and bzip2 commands are functionally similar as they compress and decompress files, just using different algorithms. 
+
+-> The gzip command uses the DEFLATE algorithm, whereas the bzip2 command uses the Burrows-Wheeler block sorting algorithm. While they both work well, the bzip2 command has a better compression ratio.
+
+-> To compress a file:
+
+        # gzip <file_name> //This compress the existing file to a file with a .gz extension.
+
+        # bzip2 <file_name> //This compress the existing file to a file with a .bz2 extension.
+
+-> To decompress the file use -d option:
+
+        # gzip -d file_name.gz
+
+        # bzip2 -d file_name.bz2
+
+*** As an alternative, the gunzip and bunzip2 commands can be used for the same purpose.
+
+        # gunzip file_name.gz
+
+        # bunzip2 file_name.bz2
