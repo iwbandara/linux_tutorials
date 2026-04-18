@@ -1,0 +1,65 @@
+Network Time Protocol (NTP):
+----------------------------
+
+-> When a Linux server boots, the hardware clock, also referred to as the real-time clock (RTC), is read. This clock typically resides in the computer hardware, and the time it defines is known as hardware time.
+
+-> From the hardware clock, the system gets its initial time settings.
+
+-> The time on the hardware clock on Linux servers is usually set to Coordinated Universal Time (UTC). UTC is a time that is the same everywhere on the planet, and based on UTC, the current local time is calculated.
+
+-> NTP is a method of maintaining system time that is provided through NTP servers on the Internet. It is an easy solution to provide an accurate time to servers, because most servers are connected to the Internet anyway.
+
+-> To determine which Internet NTP server should be used, the concept of stratum is used. The stratum defines the reliability of an NTP time source, and the lower the stratum, the more reliable it is.
+
+
+NTP Configuration:
+------------------
+
+How to check the current time related information:
+--------------------------------------------------
+
+	# timedatectl
+
+How to setup the timestamp:
+---------------------------
+
+    # timedatectl set-time "2026-04-18 09:51:15"
+
+How to setup the timezone manually:
+-----------------------------------
+
+	# timedatectl set-timezone "Asia/Colombo"
+
+How to enable NTP:
+------------------
+
+	# timedatectl set-ntp true
+
+How to disable NTP:
+-------------------
+
+	# timedatectl set-ntp false
+
+*** Check the /etc/chrony.conf file to identify which NTP server is being used.
+
+NTP in Linux:
+=============
+
+How to install chrony service:
+------------------------------
+
+	# yum install chrony
+
+How to check to see the chronyd daemon is running:
+
+	# systemctl status chronyd
+
+How to change the Chrony configurations:
+
+    # vi /etc/chrony.conf
+
+    *** In the file add the server IP or FQDN as;=> server <ip> iburst
+
+To check the chrony services:
+
+    # chronyc sources -v
