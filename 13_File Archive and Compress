@@ -13,6 +13,11 @@ How to view the archived files:
 
 	# tar tf <archive_name.tar>
 
+How to append a file to an archived file:
+-----------------------------------------
+
+	# tar rvf <archive_name.tar> <file(s)_to_be_added>
+
 How to extract files:
 ---------------------
 
