@@ -58,7 +58,7 @@ How to change the Chrony configurations:
 
     # vi /etc/chrony.conf
 
-    *** In the file add the server IP or FQDN as;=> server <ip> iburst
+    *** In the file add the server IP or FQDN as;=> <server-ip_or_FQDN> iburst
 
 To check the chrony services:
 
