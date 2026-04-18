@@ -3,6 +3,7 @@
 => We can used the redirection to move the output from the terminal to a file.
 
 => Standard Output:
+-------------------
 
     $ ls -l > output.txt //This will move the output of 'ls -l' command into a file named output.txt. If the file does not exist it will create a new file 
 and if file is already there it will re-create the file replacing the existing file.
@@ -17,3 +18,10 @@ command to be executed.
     $ ls -l file11.txt >> output.txt 2>> error.txt
 
     $ ls -l file11.txt >> output.txt 2> /dev/null //This command will not save the error, it will discard the error message.
+
+=> Standard Error:
+------------------
+
+    $ ls file1 file2 2> error.txt //Add the error to the file. If file does not exists it will create and if available overwrite the content.
+
+    $ ls file1 file2 2>> error.txt //Append the error output to the end of the file.
