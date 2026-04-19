@@ -1,0 +1,31 @@
+Sort Command:
+-------------
+
+-> The 'sort' command is used to sort the content in a file.
+
+Syntax:
+
+    # sort <file-name>  -> By default content will be sorted based on the first column of the file.
+
+How to change the column:
+-------------------------
+
+    # sort -k<col-num> <file-name>
+
+    Example:
+    
+        # sort -k2 sample.txt   -> sorts the data based on the column number 2.
+
+*** By default, sort command consider the separator as the 'tab'. If the columns are separated using a different character you need to mention it.
+
+    # sort -k2 -t "," sample.txt    -> Here '-t' option is used to mention the separator.
+
+How to sort numerical values:
+-----------------------------
+
+    # sort -n <file-name>
+
+How to sort content in reverse order:
+-------------------------------------
+
+    # sort -r <file-name>
