@@ -1,0 +1,146 @@
+Bash Scripting:
+---------------
+
+-> The first line of the script is called the shebang (#!/bin/bash)
+
+-> The script file should be an executable file to execute it.
+
+	# chmod +x <file-name>
+
+-> Use uppercases when naming a variable. A variable should not start with a number.
+
+	TODAY is correct, but 4you is incorrect	
+
+-> When assigning a value to a variable, do not use spaces around the = sign.
+
+	TODAY=4
+
+-> When calling a variable use 'echo' command and add '$' symbol before the variable name.
+	
+	# echo $TODAY // will display the value 4
+
+	# echo "Today is the ${TODAY}th of July" // to avoid ambiguous expressions.
+
+-> Ways to assign the command output to a variable:
+
+	Method 01 -> var1=`ls -l`
+
+	Method 02 -> var2=$(date)
+
+-> An arithmatic operation should be used as follows;
+
+	total=$((10 + 20))
+
+-> Variables can store output from a command. This can be done in two ways.
+
+	Method 01 => date=`date +%d`
+
+	Method 02 => date=$(date +%m)
+
+-> Positional parameters:
+
+	Parameter	Description
+	---------	-----------
+	$?		Exist value of the last command
+	$$		PID of the current shell
+	$0		Name of the program currently in execution
+	$1 to $9	Command-line arguments passed to a script
+	$#		Number of command-line arguments
+
+-> Test Operators for Bash scripts:
+
+Operator		Description
+--------		-----------
+STRING1 = STRING2	True if the two strings are equal
+STRING1 != STRING2	True if the two strings are not equal
+INTEGER1 -eq INTEGER2	True if the two integers are equal
+INTEGER1 -ne INTEGER2	True if the two integers are not equal
+INTEGER1 -ge INTEGER2	True if INTEGER1 is greater than or equal to INTEGER2
+INTEGER1 -gt INTEGER2	True if INTEGER1 is greater than INTEGER2
+INTEGER1 -le INTEGER2	True if INTEGER1 is less than or equal to INTEGER2
+INTEGER1 -lt INTEGER2	True if INTEGER1 is less than INTEGER2
+----------------------------------------------------------------------
+-d FILE		True if FILE is a directory
+-e FILE		True if FILE exists
+-f FILE		True if FILE exists and is a regular file
+-r FILE		True if FILE exists and is granted read permissions
+-w FILE		True if FILE exists and is granted write permissions
+-x FILE		True if FILE exists and is granted execute permissions
+
+-> Control structures:
+
+	=> if...then...else...fi
+
+		if [ condition ]
+		then
+			//statement
+		else
+			//statement
+		fi
+
+	=> for...do...done
+
+		for <variable> in <list>
+		do
+			//statements
+		done
+
+-> To convert text into lowercase ',,' operator can be used as follows;
+
+	text="HELLO"
+	lower_text="${text,,}"
+	echo "$lower_text" 	-> this will output 'hello'
+
+Examples:
+
+Below script can be used to change the password for the given list of users;
+
+	for user in maryam adam jacob;
+	do
+		echo Password@1 | passwd --stdin $user
+	done
+
+User creation script:
+---------------------
+
+echo -n "Hello, Would you like to add new users to the system? (Y)es or (N)o "
+read answer
+
+if [ $answer == "Yes" || $answer == "Y" ]
+then
+	echo -n "Do you have a list of users? Yes or No"
+	read ans
+	if [ $ans == "Yes" ]
+	then	
+		echo "Enter the full path of the file."
+		read file_path
+	else
+		echo -n "Please enter the username here: "
+		read username
+
+		user_name=$(grep $username /etc/passwd | cut -f1 -d:)
+
+		if [ $uername != $user_name ]
+		then
+			echo "User $username adding to the system..."
+			useradd $username
+		else
+			echo "Alert: User $username already exists."
+		fi
+	fi
+else
+	exit 0
+fi
+
+========================================================================
+
+Read content from a file using while loop:
+------------------------------------------
+
+n=1
+while read line
+do
+	echo $line
+	n=$((n+1))
+done < file_name
+
