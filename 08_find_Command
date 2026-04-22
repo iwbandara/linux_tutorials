@@ -39,6 +39,9 @@ find . -type f -empty
 # Find all empty directories
 find . -type d -empty
 
+# Find all executable files
+find . -type f -executable
+
 # Find all hidden files
 find . -type f -name ".*"
 
