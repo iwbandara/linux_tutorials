@@ -1,0 +1,98 @@
+Logs:
+-----
+
+-> Check logs regularly to stay updated on system activity.
+
+-> Treat logs like a system diary capturing daily events.
+
+-> Stored in plain text under '/var/log/' directory.
+
+-> Record everything from system messages to scurity alerts.
+
+Importance of Logs:
+-------------------
+
+-> Helps identify when and why problems occured.
+
+-> Tracks system activity for troubleshooting issues.
+
+-> Records user actions for auditing and security.
+
+Common Log file locations:
+--------------------------
+
+-> /var/log/messages -> Non-designated (general) logs events.
+
+-> /var/log/secure -> Authentication related logs
+
+-> /var/log/cron -> Cron job related log events
+
+-> /var/log/boot.log -> System boot related log events
+
+-> /var/log/dmesg -> Hardware related log events, specially from kernel.
+
+Log Management Services:
+------------------------
+
+    a. rsyslog
+    
+    b. journald
+
+How to use 'journalctl' to view Logs:
+-------------------------------------
+
+-> To display the entire Log;
+
+    # journalctl
+
+*** Use arrow keys to move up and down. Press 'Q' key to exit.
+
+-> To display log X no of minutes since current time:
+
+    # journalctl --since "X minutes ago"
+
+    Example:
+
+        # journalctl --since "10 minutes ago"
+
+-> How to view log entries between two specific dates:
+
+    # journalctl --since "YYYY-MM-DD" --until "YYYY-MM-DD"
+
+    Example:
+
+        # journalctl --since "2026-04-21" --until "2026-04-24"
+
+-> How to filter log entries from a specific service unit:
+
+    # journalctl -u <unit-name>
+
+    Example:
+
+        # journalctl -u sshd    -> display log entries related to SSH service.
+
+-> How to list log entries based on priority:
+
+    # journalctl -p err
+
+-> How to list recent boots:
+
+    # journalctl --list-boots
+
+-> How to check the previous boot records:
+
+    # journalctl -b -1
+
+-> How to check the current boot session logs:
+
+     journalctl -b 0
+
+-> To monitor real-time log records:
+
+    # journalctl -f
+
+-> How to list logs from previous boot, high priority error logs related to sshd:
+   
+    # journalctl -b -p err -u sshd
+
+
