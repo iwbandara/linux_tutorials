@@ -1,0 +1,34 @@
+The use of 'sed' command:
+-------------------------
+
+-> In Linux, the sed command—short for Stream Editor—is a powerful tool used to filter and transform text. Unlike a traditional text editor (like Notepad or Vim) where you open a file and click around to make changes, sed works non-interactively. 
+
+-> It takes an input stream (a file or output from another command), applies your editing instructions line-by-line, and outputs the result.
+
+-> Syntax:
+
+    # sed 's/<text-to-find>/<replace-text>/' <input-stream>
+
+-> Example:
+
+    # sed 's/Hello/Hi/' info_file.txt    -> Finds the work Hello and replace it with 'Hi' only the first instance found in a line.
+
+*** The output is temporary. Changes are not applied to existin file.
+
+-> If you need to replace every instance;
+
+    # sed 's/Hello/Hi/g' info_file.txt -> here the 'g' says global.
+
+*** The command 'sed' will search for the given pattern only, not a specific word.
+
+-> How to change and write to the file;
+
+    # sed -i 's/Hello/Hi/g' info_file.txt
+
+-> Replace only on lines matching the line pattern:
+
+    # sed '/The/Hello/Hi/' info_file.txt -> find the lines which starts with 'The' word replace pattern 'Hello' with 'Hi'. Only the first instance.
+
+*** To make a global change;
+
+    # sed '/The/Hello/Hi/g' info_file.txt
