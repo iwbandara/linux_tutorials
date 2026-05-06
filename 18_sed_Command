@@ -13,7 +13,28 @@ The use of 'sed' command:
 
     # sed 's/Hello/Hi/' info_file.txt    -> Finds the work Hello and replace it with 'Hi' only the first instance found in a line.
 
-*** The output is temporary. Changes are not applied to existin file.
+*** The output is temporary. Changes are not applied to existing file.
+
+-> How to print the entire file;
+
+    # sed -n 'p' file-name
+
+-> How to print the entire file with line numbers;
+
+    # sed '=' file-name
+
+-> How to print a sentence range;
+
+    # sed -n 'X,Y p' file-name -> prints a specified range
+
+    # sed -n '5,$ p' file-name -> prints from line number 5 upto the last line
+
+    # sed -n '1~5 p' file-name -> prints the first line then prints the line after 5 lines.
+
+-> How to print a partcular line;
+
+    # sed -n '<line-number> p' file-name
+  
 
 -> If you need to replace every instance;
 
@@ -32,3 +53,44 @@ The use of 'sed' command:
 *** To make a global change;
 
     # sed '/The/Hello/Hi/g' info_file.txt
+
+-> How to delete a pattern:
+
+    # sed '/pattern/d' <file-name> -> Temporary deletion
+
+    # sed -i '/pattern/d' file-name -> changes are appied to the file instantly.
+
+-> How to replace multiple patterns with one line of command;
+
+    # sed -e 's/hello/hi/g' -e 's/the/THE/g' file-name
+
+-> How to remove the spaces at the end of lines in a file;
+
+    # sed -i 's/ *$//' file-name
+
+-> How to remove the spaces at the begining of lines in a file;
+
+    # sed -i 's/^ *//' file-name
+
+
+-> How to remove the tabs at the end of lines in a file;
+
+    # sed -i 's/[[:space:]]*$//' file-name
+
+-> How to remove empty lines:
+
+    # sed -i '/^$/d' file-name
+
+-> How to convert lowercase into uppercase;
+
+    # sed 's/[a-z]/\U&/g' file-name
+
+-> How to convert lowercase into uppercase;
+
+    # sed 's/[A-Z]/\L&/g' file-name
+
+*** # awk 'NR < 10' file-name -> will print the first 10 lines of a file.
+
+
+
+
