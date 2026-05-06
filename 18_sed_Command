@@ -34,13 +34,16 @@ The use of 'sed' command:
 -> How to print a partcular line;
 
     # sed -n '<line-number> p' file-name
-  
 
 -> If you need to replace every instance;
 
     # sed 's/Hello/Hi/g' info_file.txt -> here the 'g' says global.
 
 *** The command 'sed' will search for the given pattern only, not a specific word.
+
+-> How to replace multiple characters;
+
+    # sed 's/[aB]//g' file-name -> This replaces characters 'a' and 'B' in the file.
 
 -> How to change and write to the file;
 
@@ -60,6 +63,8 @@ The use of 'sed' command:
 
     # sed -i '/pattern/d' file-name -> changes are appied to the file instantly.
 
+*** # sed '$d' file-name will delete the last line of the file.
+
 -> How to replace multiple patterns with one line of command;
 
     # sed -e 's/hello/hi/g' -e 's/the/THE/g' file-name
@@ -71,7 +76,6 @@ The use of 'sed' command:
 -> How to remove the spaces at the begining of lines in a file;
 
     # sed -i 's/^ *//' file-name
-
 
 -> How to remove the tabs at the end of lines in a file;
 
@@ -91,6 +95,9 @@ The use of 'sed' command:
 
 *** # awk 'NR < 10' file-name -> will print the first 10 lines of a file.
 
+-> How to insert a line into a specific location;
+
+    # sed '1i\content' file-name -> insert a new line before the first line of the file
 
 
 
