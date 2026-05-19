@@ -1,0 +1,64 @@
+-> pidstat:
+-----------
+
+-> Introduction:
+
+    -> The pidstat command in Linux is used to monitor the performance of individual processes and tasks. It provides detailed statistics about:
+
+        => CPU usage
+        => Memory usage
+        => Disk I/O activity
+        => Process scheduling
+        => Thread activity
+
+-> The command pidstat is very useful for:
+
+        => Troubleshooting system performance
+        => Identifying resource-heavy processes
+        => Monitoring process behavior in real time
+        => Performance analysis in servers
+
+->  Syntax:
+
+        # pidstat [option] [interval] [count]
+    
+    -> Installing pidstat command:
+
+        # apt install sysstat (Ubuntu/ Debian)
+
+        # yum/dnf install sysstat (RHEL, CentOS)
+
+-> Monitor every 2 seconds:
+
+    # pidstat 2
+
+-> Monitor a specific PID:
+
+    # pidstat -p <PID>
+
+-> Monitor multiple PIDs:
+
+    # pidstat -p <PID1>,<PID2>
+
+-> Monitor all PIDs:
+
+    # pidstat -p ALL
+
+-> Use Cases:
+
+    System Administration:
+
+        => Detect high CPU processes
+        => Monitor memory leaks
+        => Analyze disk-intensive applications
+
+    Cybersecurity:
+
+        => Detect suspicious processes
+        => Identify hidden resource-consuming malware
+        => Monitor abnormal system activity
+
+    Performance Tuning
+
+        => Optimize server applications
+        => Analyze workload distribution
