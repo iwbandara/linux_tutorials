@@ -1,0 +1,105 @@
+# What is rsync Command?
+
+    -> The rsync command in Linux is a powerful utility used for:
+
+        => File transfer
+        => File synchronization
+        => Backup operations
+        => Directory mirroring
+
+    -> rsync stands for remote synchronization. It efficiently copies files between:
+
+        => Local directories
+        => Remote systems
+        => Servers over a network
+
+**** The command rsync uses SSH command by default.
+
+    -> Verify to see if rsync is installed or not;
+
+        # rsync --version
+
+        # which rsync or 
+        
+        # command -v rsync
+
+    -> How to install rsync;
+
+        # apt install rsync
+
+        # dnf install rsync
+
+    -> Archive mode:
+
+        # rsync -a source/ destination/
+
+        -> Archive mode preserves:
+
+            => Permissions
+            => Ownership
+            => Timestamps
+            => Symbolic links
+
+    -> Verbose mode:
+
+        # rsync -av source/ destination/
+
+**** When specifying a directory;
+
+        dir1 -> Will copy the entire directory
+
+        dir1/ -> copies the content of the directory.
+
+    -> Copying a directory & its content: (-r -> recursive option)
+
+        # rsync -rv <source-dir> <destination-dir>
+
+    -> Dry run mode (test run): (use this method to check if everything is correct)
+
+        # rsync --dry-run dir1 dir100/ 
+
+    -> Display progress mode:
+
+        # rsync -avp source/ destination/ //Option p is used to display the progress. Most suitable when copying large files.
+
+    -> Backup files in a local system:
+
+        # rsync -avp --delete <source-path> <destination-path> //Command will copy incremental files and delete non-exiting files from the destination.
+
+        Example:
+
+            # rsync -avp --delete play-ground Backups/
+
+    -> Backup files to a remote system:
+
+        # rsync -avp --delete <source-path> <destination-path(remote-system)>
+
+        Example:
+
+            # rsync -avp --delete play-ground iwbandara@192.168.1.105:/home/iwbandara/backups/
+
+    -> How to copy files/directory content from a remote system:
+
+        # rsync -rv username@ip-address:<source-path> <destination-path>
+
+        Example:
+
+            # rsync -rv iwbandara@192.168.10.10:backups/ notes/ //Copies content in the directory
+
+            # rsync -rv iwbandara@192.168.10.10:backups notes/ //Copies entire 'backups' directory
+
+    -> How to compress file when moving:
+
+        # rsync -zva <source> <destination> //Content will be compressed while transfer happens.
+
+    -> How to remove the source files when moving:
+
+        # rsync -rva --remove-source-files <source> <destination> //Source files (only) will be removed from the source location. No directories will be removed.        
+
+**** The graphical application is called grsync.
+
+    # apt install grsync
+
+Video Links:
+
+    -> https://www.youtube.com/watch?v=KG78O53u8rY
