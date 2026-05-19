@@ -1,0 +1,52 @@
+-> pidstat
+
+-> vmstat
+
+-> lsof
+
+-> nproc
+
+-> mpstat
+
+-> iostat:
+----------
+    
+    -> The iostat command in Linux is used to monitor CPU usage and disk I/O (Input/Output) statistics. It helps system administrators analyze system performance, disk activity, and device load.
+
+    -> The command is part of the sysstat package.
+
+    -> Syntax:
+
+        # iostat [option(s)]
+    
+    -> Installing iostat command:
+
+        # apt install sysstat (Ubuntu/ Debian)
+
+        # yum/dnf install sysstat (RHEL, CentOS)
+
+    -> Continuous monitoring:
+
+        # iostat 2 //Display the output every 2 seconds continuosly.
+
+        # iostat 2 10 //Display the output every 2 seconds for only 10 times.
+
+    -> Display only the CPU info:
+
+        # iostat -c 1 5
+
+    -> Display only the Disk info:
+
+        # iostat -d 1 5
+
+    -> Monitor a specific  device:
+
+        # iostat -x sda
+
+-> Use Cases:
+
+    -> Detect disk bottlenecks
+    -> Troubleshoot slow systems
+    -> Analyze storage performance
+    -> Monitor server workload
+    -> Check high I/O wait issues
