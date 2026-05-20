@@ -1,0 +1,87 @@
+# Security-Enhanced Linux (SELinux):
+====================================
+
+-> SELinux is a mandatory access control (MAC) system for the Linux kernel that enhances security 
+by limiting what processes and users can access.
+
+-> It works by labeling all system components (files, processes, etc.) and enforcing access rules 
+based on those labels.
+
+-> SELinux goes beyond discretionary access control (DAC) used by Linux. It enforces access rules 
+based on security policies, even if the user has permissions.
+
+How to check the existing SELinux (mode) settings:
+-------------------------------------------
+
+	# getenforce
+
+SELinux Modes:
+--------------
+
+	=> Enforcing - SELinux security policy is enforced.
+	=> Permissive - SELinux prints warnings instead of forcing.
+	=> Disabled - No SELinux policy is loaded.
+
+How to change the SELinux settings:
+-----------------------------------
+
+	# setenforce [0 | 1] 	(0 => Permissive | 1 => Enforcing)
+
+*** SELinux mode disabled cannot be assigned using the above command.
+
+How to disable or enable SELinux:
+---------------------------------
+
+	=> Edit the /etc/selinux/config file.
+	
+    => Change the value of SELINUX variable to either enforcing, permissive or disabled.
+
+How to check the boolean status of a service(s):
+---------------------------------------------
+
+	# getsebool -a // Lists all 
+
+	# getsebool -a | grep "httpd" // Lists only the httpd related values
+
+How to change boolean status of a service:
+------------------------------------------
+
+	# setsebool -P <service> [on|off]
+
+	Example:
+
+		# setsebool -P httpd_enable_homedirs on //Enable the httpd_enable_homedirs service.
+
+How to check the SELinux type context on a file:
+------------------------------------------------
+
+    # ls -Zl file1
+
+How to change the SELinux content on a directory:
+-------------------------------------------------
+
+    # restorecon -R /var/www/html
+
+How to check the enabled ports for a specific service:
+------------------------------------------------------
+
+	# semanage port -l | grep <service-name>
+
+How to add a port to allow access to a service:
+-----------------------------------------------
+
+	# semanage port -a -t <SELinux-label> -p <protocol> <port-no>
+
+	Example:
+
+		# semanage port -a -t http_port_t -p tcp 81 //Allows Apache to listen on tcp port 81
+
+How to change the context of a directory:
+-----------------------------------------
+
+	# semanage fcontext -a -t <context-type> <path>
+
+	Example:
+
+		# semanage fcontext -a -t httpd_sys_content_t "test(.*)" //Change the context on the test 
+		directory and its content.
