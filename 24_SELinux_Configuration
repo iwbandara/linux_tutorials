@@ -10,31 +10,52 @@ based on those labels.
 -> SELinux goes beyond discretionary access control (DAC) used by Linux. It enforces access rules 
 based on security policies, even if the user has permissions.
 
+-> It is a project of the United States National Security Agency (NSA) and the SELinux community.
+
+SELinux Modes:
+--------------
+
+	=> Enforcing - SELinux security policy is enforced. (enabledby default in RedHat, CentOS, and Fedora)
+	=> Permissive - SELinux prints warnings instead of forcing. Logs activity.
+	=> Disabled - No SELinux policy is loaded.
+
 How to check the existing SELinux (mode) settings:
 -------------------------------------------
 
 	# getenforce
 
-SELinux Modes:
---------------
-
-	=> Enforcing - SELinux security policy is enforced.
-	=> Permissive - SELinux prints warnings instead of forcing.
-	=> Disabled - No SELinux policy is loaded.
-
 How to change the SELinux settings:
 -----------------------------------
 
+Method 1:
 	# setenforce [0 | 1] 	(0 => Permissive | 1 => Enforcing)
 
+Method 2:
+	# sestatus
+
 *** SELinux mode disabled cannot be assigned using the above command.
+
+*** After changing the SELinux features use /.autorelabel.
 
 How to disable or enable SELinux:
 ---------------------------------
 
-	=> Edit the /etc/selinux/config file.
+	=> Edit the '/etc/selinux/config' file. 
+	
+	**** Further, you can use '/etc/sysconfig/selinux' file, which is a symbolic links for /etc/selinux/config.
 	
     => Change the value of SELINUX variable to either enforcing, permissive or disabled.
+
+SELinux Booleans:
+-----------------
+
+-> SELinux Booleans are toggle options that allow administrators to enable or disable specific security rules without modifying SELinux policies.
+
+-> Key points about SELinux booleans:
+
+	=> Adjust security policies dynamically.
+
+	=> Persistent across reboots.
 
 How to check the boolean status of a service(s):
 ---------------------------------------------
@@ -43,10 +64,14 @@ How to check the boolean status of a service(s):
 
 	# getsebool -a | grep "httpd" // Lists only the httpd related values
 
+	# semanage boolean -l
+
 How to change boolean status of a service:
 ------------------------------------------
 
-	# setsebool -P <service> [on|off]
+	# setsebool <service> [on|off]	//This change is temporary.
+
+	# setsebool -P <service> [on|off] //This change apply permanently.
 
 	Example:
 
@@ -85,3 +110,8 @@ How to change the context of a directory:
 
 		# semanage fcontext -a -t httpd_sys_content_t "test(.*)" //Change the context on the test 
 		directory and its content.
+
+Video Links:
+------------
+
+-> https://www.youtube.com/watch?v=o9Ue4BQAPCc
