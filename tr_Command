@@ -1,0 +1,38 @@
+# The tr Command:
+#----------------
+
+-> The tr commnd can be used to translate or delete characters.
+
+-> Most of the time tr command is used with other commands.
+
+Example 1:
+    
+    # echo "Hello, World" | tr [a-z] [A-Z] //This prints "HELLO, WORLD". The tr command converts all lowercase letters to uppercase letters.
+
+Example 2:
+
+    Method 1:
+
+        # cat sample_file.txt | tr [a-z] [A-Z]
+
+        # cat sample_file.txt | tr [:lower:] [:upper:]
+
+    Method 2:
+
+        # tr [a-z] [A-Z] < sample_file.txt
+
+Example 3:
+
+    # echo "Hello, World" | tr -d  [a-z] //This prints only the capital letters. The -d options removes all lowercase letters.
+
+Example 4:
+
+    # echo <file-name> | tr -s "t" //This command checks the file and removes duplicate letters of 't' in the file. The -s stands for squeeze.
+
+Example 5:
+
+    # echo "Hello World 123" | tr -d [:alpha;] //This output only 123
+
+Example 6:
+
+    # echo "Hello_ World" | tr "_" "," //This command replaces the uderscore with a comma.
