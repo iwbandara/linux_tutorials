@@ -1,0 +1,63 @@
+What is systemd in Linux?
+-------------------------
+
+-> The systemd is a system and service manager used in many modern Linux distributions to control the boot process and manage system services.
+
+-> It is the first process started by the Linux kernel during booting and runs with Process ID (PID) 1.
+
+-> Main Functions of systemd
+----------------------------
+
+1. System Boot Management
+
+    systemd initializes the operating system during startup.
+
+    It:
+        starts essential services
+        mounts filesystems
+        prepares the system environment
+        manages dependencies between services
+
+2. Service Management
+
+    It controls background services (daemons) such as:
+
+        web servers
+        SSH servers
+        database servers
+        networking services
+
+    Example services:
+
+        sshd
+        httpd
+        nginx
+
+3. Parallel Service Startup
+
+    Unlike older init systems, systemd can start multiple services simultaneously, which makes the boot process faster.
+
+4. Logging Management 
+
+    systemd includes a logging service called:
+
+        journald
+
+    Logs can be viewed using:
+
+        #journalctl
+
+-> Advantages of systemd:
+-------------------------
+
+    a. Faster boot times
+    
+    b. Better dependency management
+    
+    c. Parallel startup of services
+    
+    d. Centralized logging
+    
+    e. Easier service control
+    
+    f. Automatic service recovery
