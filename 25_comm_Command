@@ -1,0 +1,68 @@
+# The comm Command:
+# -----------------
+
+    -> The comm command in Linux is used to compare two sorted files line by line. 
+    
+    -> It displays:
+
+        Lines unique to the first file
+        Lines unique to the second file
+        Lines common to both files
+
+    -> It is useful for:
+
+        Comparing text files
+        Identifying common records
+        Finding differences between datasets
+
+    -> Syntax:
+
+        # com [options] file1 file2
+    
+        *** Important: Both files must be sorted before using comm.
+
+    -> Common Options:
+
+        Option|	Description
+        ------|  -----------
+              |
+        -1	  |  Suppress column 1
+        -2	  |  Suppress column 2
+        -3	  |  Suppress column 3
+
+    -> Show only common lines:
+
+        # comm -12 file1 file2
+
+    -> Show lines only from first file:
+
+        # comm -23 file1 file2
+    
+    -> Show lines only from second file:
+
+        # comm -13 file1 file2
+
+    -> Difference Between comm and diff:
+
+        Feature	                comm	diff
+        ------------------------------------
+
+        Requires sorted files	Yes	    No
+        Line-by-line comparison	Yes	    Yes
+        Shows detailed changes  No	    Yes
+        Simpler output	        Yes	    No
+
+    -> Summary
+
+        The comm command is used to compare two sorted files and identify:
+
+            Unique lines in each file
+            Common lines between files
+
+        It is especially useful for:
+
+            File comparison
+            Data analysis
+            User/account comparison
+            Log analysis
+            Record verification
