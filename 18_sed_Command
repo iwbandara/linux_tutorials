@@ -99,5 +99,11 @@ The use of 'sed' command:
 
     # sed '1i\content' file-name -> insert a new line before the first line of the file
 
+-> How to print a line with an exact matching:
 
+    # sed -n '/\b<pattern>\b/p' file-name
+
+-> How to suppress a set of lines from a file:
+
+    # sed -n '3,10p' file-name -> prints the lines from 3rd to 10th.
 
