@@ -1,0 +1,58 @@
+Use of nmcli command in Linux:
+==============================
+
+How to check the existing network connections:
+----------------------------------------------
+
+	# nmcli connection show
+
+*** The above command display the device names (connection profiles) along with UUID.
+
+    # nmcli connection show --active -> List active profiles
+
+    # nmcli connection show "STUDENT WiFi" -> Show the profile called "Student WiFi"
+
+    # sudo nmcli connection up "home-wifi"	-> Activate a profile
+
+    # sudo nmcli connection down "home-wifi"	-> Deactivate a profile
+
+    # sudo nmcli connection delete "home-wifi"	-> Delete a saved profile
+
+How to check the network device status:
+---------------------------------------
+
+    # nmcli device status
+
+*** This command shows status such as connected, disconnected, unmanaged, or unavailable.
+
+    # nmcli device show eth0	-> Show detailed device properties
+
+How to modify the network connection info (Add IP Address):
+-----------------------------------------------------------
+
+	# nmcli connection modify <connection_name> ipv4.addresses x.x.x.x/x
+
+How to add the gateway IP Address:
+----------------------------------
+
+	# nmcli connection modify <connection_name> ipv4.gateway x.x.x.x
+
+How to add the nameserver IP Address:
+-------------------------------------
+
+	# nmcli connection modify <connection_name> ipv4.dns x.x.x.x
+
+*** You can combine all three above separate commands into one commands as follows;
+
+    # nmcli connection modify <connection-name> ipv4.addresses x.x.x.x/x ipv4.gateway y.y.y.y ipv4.dns a.a.a.a
+
+    *** In the above command we only specify the subnet value when supplying the IP address. 
+
+**** To check the gateway information use 'route -n' command.
+
+**** To check the DNS server information use 'cat /etc/resolv.conf' command.
+
+How to reload the network connection:
+-------------------------------------------------
+
+	# nmcli connection reload <connection_name>
