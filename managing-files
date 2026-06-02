@@ -15,3 +15,18 @@
 # Files are moved and renamed with the 'mv' command.
 
 # The cp command is used to copy files and directories.
+
+-> How to empty a file:
+-----------------------
+
+Method 1:
+    cat /dev/null > <file-name>
+
+Method 2:
+    > <file-name>
+
+Method 3:
+    : > < file-name>
+
+Method 4:
+    truncate -s 0 <file-name>
