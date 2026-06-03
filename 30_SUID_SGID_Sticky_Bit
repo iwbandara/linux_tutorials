@@ -1,0 +1,44 @@
+SGID Bit:
+---------
+
+-> Stands for Set Group ID.
+
+-> When SGID bit is set on a directory any new file or sub-directory created will inherit the directory's group ownership.
+
+-> To set the SGID bit:
+
+    Method 1:
+            chmod 2XXX <directory>
+
+    Method 2:
+            chmod g+s <directory>
+
+SUID Bit:
+---------
+
+-> Command will be running with Owner rights instead of the rights of the executer.
+
+-> To set SUID bit:
+
+    # chmod u+s <file-name>
+
+Sticky Bit:
+-----------
+
+-> In Linux, the sticky bit is a special file system permission applied to directories that prevents users from deleting or renaming files they do not own, even if they have full write access to that directory.
+
+-> Lowercase t: The sticky bit is active, and the "others" group also has execution (x) permissions.
+
+-> Uppercase T: The sticky bit is active, but the "others" group does not have execution permissions.
+
+-> How to set Sticky bit:
+
+    # chmod +t <directory>
+
+-> How to remove Sticky bit:
+
+    # chmod -t <directory>
+
+*****
+
+https://www.youtube.com/watch?v=zU43cReOBsc
