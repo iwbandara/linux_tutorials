@@ -1,21 +1,27 @@
-# Linux file permissions
+# Linux file permissions:
+-------------------------
 
-# The first field in the output listing is a code that describes the permissions for the files and
-directories. 
+-> The ls command -l option shows detailed information about permissions and ownership.
 
-# The first character in the field defines the type of the object:
+    # ls -l <file-name>
 
-	- for fi les
- 
-	d for directories
-	
-	l for links
+-> Use the ls command -d option to show detailed information about a directory itself, and not its contents.
 
-	c for character devices
- 
-	b for block devices
-	
-	n for network devices
+    # ls -ld <directory-name>
+
+-> The first character of the long listing is the file type, and is interpreted as follows:
+        
+    • - is a regular file.
+    • d is a directory.
+    • l is a symbolic link.
+    • c is a character device file.
+    • b is a block device file.
+    • p is a named pipe file.
+    • s is a local socket file.
+
+-> The next nine characters represent the file permissions. These characters are interpreted as three sets of three characters: The first set are permissions that apply to the file owner. The second set are for the file's group owner. The last set applies to all other (world) users.
+
+-> The . special directory reflects the permissions of directory itself, and the .. special directory reflects the permissions of its parent directory.
 
 # Each set of three characters defines an access permission triplet:
 
