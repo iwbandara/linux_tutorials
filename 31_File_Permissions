@@ -21,6 +21,8 @@
 
 -> The next nine characters represent the file permissions. These characters are interpreted as three sets of three characters: The first set are permissions that apply to the file owner. The second set are for the file's group owner. The last set applies to all other (world) users.
 
+-> The ls command -a option shows the permissions of hidden files, including the special files to represent the directory and its parent. 
+
 -> The . special directory reflects the permissions of directory itself, and the .. special directory reflects the permissions of its parent directory.
 
 # Each set of three characters defines an access permission triplet:
