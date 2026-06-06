@@ -1,0 +1,134 @@
+What is Network File Sharing (NFS)?
+-----------------------------------
+
+-> NFS is a file system protocol that allows a client to access the files on the remote server over a network as if these files are located locally on client storage.
+
+What is AutoFS?
+---------------
+
+-> AutoFS is a Linux service that automatically mounts file systems only when accessed and unmounts them after being idle.
+
+-> Key Features and Benefits:
+-----------------------------
+
+    => On-Demand Mounting: Unlike static mounts in /etc/fstab, which mount at boot time, autofs only mounts a share when a user or process attempts to access the directory.
+
+    => Automatic Unmounting: It monitors inactivity and automatically unmounts shares after a configurable timeout (the default is often 300 seconds), freeing up system resources.
+
+    => Improved Boot Reliability: Since it doesn't try to mount network shares during startup, the system boots faster and won't hang if a remote server is offline.
+    
+    => Reduced Network Traffic: By unmounting idle shares, it reduces persistent connections and potential network overhead.
+
+How Autofs Works:
+-----------------
+
+-> The service consists of two primary components: the autofs kernel module and the automount user-space daemon. 
+
+    1. Trigger: When a program tries to access a path managed by autofs (e.g., via ls or cd), the kernel intercepts the request.
+
+    2. Mounting: The automount daemon looks up the configuration in "map files," performs the mount, and then allows the original request to proceed.
+
+    3. Expiry: After a set period of no activity, the daemon unmounts the file system.
+
+-> Core Configuration Files:
+
+    => /etc/auto.master (The Master Map): This is the main configuration file. It lists the base mount points and points to "map files" that contain specific share details.
+       Example Entry: /nfs /etc/auto.nfs --timeout=60
+    
+    => /etc/auto.<name> (Map Files): These files define what specific shares belong under the base mount point.
+       Example Entry in auto.nfs: work -rw,soft server.example.com:/exports/work (This would mount the share to /nfs/work)
+
+Configuration:
+
+Server:
+--------
+
+1. Install nfs package on the server. (nfs-utils & autofs packages should be installed)
+
+  Method 1:
+
+	# yum install nfs* 
+
+  Method 2:
+
+    # dnf install nfs-utils
+
+2. Create a directory which is shared.
+
+	# mkdir /share
+
+*** Change the owner & group of the share to 'nobody' user.
+
+    # chown -R nobody:nobody /share
+
+3. Assign full permission to directory.
+
+	# chmod 777 /share
+
+4. Create the exports file.
+
+	# vi /etc/exports
+
+5. Add the client information
+
+	/share 192.168.1.10(ro,sync) -> assign read-only permission to 192.168.1.10 client to the /share directory
+
+    /share 192.168.1.10(rw,sync,no_all_squash,root_squash) -> Assign read and write permission to client.
+
+6. Run the following command to export the file.
+
+	# exportfs -avr
+
+7. Add firewall rules to permanently enable nfs, mountd, & rpc-bind services.
+
+	# firewall-cmd --add-service={nfs,mountd,rpc-bind} --permanent
+
+	# firewall-cmd --reload
+
+8. Start the service:
+
+	# systemctl start nfs-server.service
+
+9. Enable the service: 
+
+	# systemctl enable nfs-server.service
+
+10. Check the service status:
+
+    # systemctl status nfs-server
+
+Client:
+-------
+
+1. Install the required packages & verify the installation.
+
+	# yum install nfs-utils autofs nfs4-acl-tools
+
+	# rpm -qi autofs -> verify the autofs installation package.
+
+2. Check for available mount locations on the server
+	
+	# showmount -e 192.168.1.100 -> IP Address of the server is mentioned
+
+    # showmount --eexports 192.168.1.100 (long version of -e option is --exports)
+
+3. Edit the /etc/auto.master file.
+
+	/auto_mount /etc/auto.misc --timeout=30
+
+4. Edit the /etc/auto.misc file.
+
+	access	-rw,soft,intr	192.168.1.10:/share
+
+5. Run the below command to enable autofs
+
+	# systemctl enable autofs --now
+
+6. Then move into /auto_mount directory and type 'cd access' to access the files.
+
+Video Links:
+---------------
+
+https://www.youtube.com/watch?v=OVCqsuGqP7A
+https://www.youtube.com/watch?v=UI9OzmZGegg
+https://www.youtube.com/watch?v=9v5h_dJdBmU
