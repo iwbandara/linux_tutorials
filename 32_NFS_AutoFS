@@ -4,10 +4,12 @@ What is Network File Sharing (NFS)?
 -> NFS is a file system protocol that allows a client to access the files on the remote server over a network as if these files are located locally on client storage.
 
 What is AutoFS?
+---------------
 
 -> AutoFS is a Linux service that automatically mounts file systems only when accessed and unmounts them after being idle.
 
 -> Key Features and Benefits:
+-----------------------------
 
     => On-Demand Mounting: Unlike static mounts in /etc/fstab, which mount at boot time, autofs only mounts a share when a user or process attempts to access the directory.
 
@@ -37,7 +39,6 @@ How Autofs Works:
        Example Entry in auto.nfs: work -rw,soft server.example.com:/exports/work (This would mount the share to /nfs/work)
 
 Configuration:
---------------
 
 Server:
 --------
@@ -47,6 +48,8 @@ Server:
   Method 1:
 
 	# yum install nfs* 
+
+    # apt install nfs-kernel-server (Ubuntu)
 
   Method 2:
 
@@ -96,6 +99,8 @@ Server:
 
     # systemctl status nfs-server
 
+    # systemctl status nfs-kernel-server (Ubnutu)
+
 Client:
 -------
 
@@ -103,11 +108,15 @@ Client:
 
 	# yum install nfs-utils autofs nfs4-acl-tools
 
+    # apt install nfs-common (Ubuntu)
+
 	# rpm -qi autofs -> verify the autofs installation package.
 
 2. Check for available mount locations on the server
 	
 	# showmount -e 192.168.1.100 -> IP Address of the server is mentioned
+
+    # showmount --eexports 192.168.1.100 (long version of -e option is --exports)
 
 3. Edit the /etc/auto.master file.
 
@@ -129,3 +138,5 @@ Video Links:
 https://www.youtube.com/watch?v=OVCqsuGqP7A
 https://www.youtube.com/watch?v=UI9OzmZGegg
 https://www.youtube.com/watch?v=9v5h_dJdBmU
+
+https://www.youtube.com/watch?v=Na_jKeVWzrc (Ubuntu)
