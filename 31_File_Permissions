@@ -1,11 +1,9 @@
-# Linux file permissions:
--------------------------
 
--> The ls command -l option shows detailed information about permissions and ownership.
+-> The ls command with '-l' option shows detailed information about permissions and ownership.
 
     # ls -l <file-name>
 
--> Use the ls command -d option to show detailed information about a directory itself, and not its contents.
+-> Use the ls command '-d' option to show detailed information about a directory itself, and not its contents.
 
     # ls -ld <directory-name>
 
@@ -21,83 +19,61 @@
 
 -> The next nine characters represent the file permissions. These characters are interpreted as three sets of three characters: The first set are permissions that apply to the file owner. The second set are for the file's group owner. The last set applies to all other (world) users.
 
--> The ls command -a option shows the permissions of hidden files, including the special files to represent the directory and its parent. 
+-> The ls command with '-a' option shows the permissions of hidden files, including the special files
+to represent the directory and its parent.
 
 -> The . special directory reflects the permissions of directory itself, and the .. special directory reflects the permissions of its parent directory.
 
-# Each set of three characters defines an access permission triplet:
+Relative file permissions:
+--------------------------
 
-	r for read permission for the object
-	
-	w for write permission for the object
-	
-	x for execute permission for the object
+Who         -> User (u), Group (g), Others (o), and All (a)
 
-# The three sets relate the three levels of security for the object:
-	
-	The owner of the object
-	
-	The group that owns the object
-	
-	Everyone else on the system
+Operation   -> add (+), remove (-)
 
-# The umask command sets the default permissions for any fi le or directory you create in the system
+Permission  -> Read (r), Write (w), and Execute (x)
 
-# The umask command shows and sets the default permissions.
+How to change permission:
+-------------------------
 
-# The full permission for a fi le is mode 666 (read/write permission for all), but for a directory it’s 777 (read/write/execute permission for all).
+    # chmod g+w file1.txt -> add write permission to the group of file named file1.txt.
 
-# The umask value is normally set in the /etc/profile startup fi le in most Linux distribu-
-tions
+    # chmod g-x file1.txt -> removes executable permission from the group
 
-# The chmod command allows you to change the security settings for fi les and directories.
+Absolute file permissions:
+--------------------------
 
-# The format of the chmod command is:
+    Read    - 4
 
-	chmod options mode file
-	
-	$ sudo chmod 755 file.txt # applies rwx to owner, r-x permissions to the group & others of the file.txt
+    Write   - 2
 
-# The first group of characters defines to whom the new permissions apply:
+    Execute - 1
 
-	u for the user
+How to change the permission:
+-----------------------------
 
-	g for the group
-
-	o for others (everyone else)
-	
-	a for all of the above
-
-# Note that the –F option for the ls command indicates whether a file has execution permissions by adding an asterisk to the filename.
-
-# The -R parameter performs the fi le and directory changes recursively.
+    # chmod 755 file1.txt -> for User all(rwx), Group (r-x), and Others (r-x)
 
 
+How to change the ownership of a file/ directory:
+-------------------------------------------------
 
+    Syntax:
 
+    Method 1:
+        
+        # chown user:group <file/directory-name>
 
+    Method 2:
 
+        # chgrp <group-name> <file/directory>
 
+    Example:
 
+        # chown iwbandara   file1.txt   -> Change the user to iwbandara of file1.txt, no change to the group.
 
+        # chown iwbandara:sysadmin file1.txt    -> Changes the user and the group at the same time.
 
+        # chown :networkengineers file1.txt     -> Changes the group to networkengineers group. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**** The -R option will be used to recursively do the change.
